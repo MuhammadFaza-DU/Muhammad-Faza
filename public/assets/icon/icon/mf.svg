@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid meet">
+  <g fill="#FFFFFF">
+    <polygon points="570,204 740,204 960,474 1180,204 1350,204 960,612"/>
+    <polygon points="570,204 660,204 660,836 570,936"/>
+    <polygon points="960,612 1050,512 1050,936 960,836"/>
+    <polygon points="1050,512 1370,512 1290,592 1050,592"/>
+    <polygon points="1050,672 1260,672 1186,746 1050,746"/>
+    <polygon points="1050,512 1140,432 1140,936 1050,1036"/>
+  </g>
+</svg>
