@@ -28,6 +28,10 @@ export const metadata: Metadata = {
   title: "Muhammad Faza | Portfolio",
   description:
     "Personal portfolio Muhammad Faza — Computer Engineer, AI Engineer, Embedded Intelligence Builder, Web Developer.",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
