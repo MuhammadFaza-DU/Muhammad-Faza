@@ -19,11 +19,11 @@ export const projectsData: Project[] = [
     tag: "GITHUB",
   },
   {
-    title: "Hire-Ready Portfolio",
+    title: "Hire Ready Portfolio",
     type: "demo",
-    href: "https://example.com",
-    description: "Template portofolio multi-page dengan pola desain dark tech, siap diisi konten dan deploy.",
-    tech: ["HTML", "Tailwind", "Motion"],
+    href: "muhammadfaza.vercel.app",
+    description: "This website is designed to document my projects, technical skills, and professional experience in Computer Engineering, Artificial Intelligence, Embedded Intelligence, and Web Development.",
+    tech: ["Next.js", "Tailwind"],
     tag: "LIVE DEMO",
   },
 ];

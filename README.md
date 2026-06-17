@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Personal Portfolio — Muhammad Faza
 
-## Getting Started
+[![Framework](https://img.shields.io/badge/Framework-Next.js%2015-black?style=flat-square&logo=next.dotjs)](https://nextjs.org/)
+[![Styling](https://img.shields.io/badge/Styling-Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+[![Deployment](https://img.shields.io/badge/Deployment-Vercel-000000?style=flat-square&logo=vercel)](https://vercel.com/)
 
-First, run the development server:
+Welcome to my personal portfolio repository. This website is designed to document my projects, technical skills, and professional experience in Computer Engineering, Artificial Intelligence, Embedded Intelligence, and Web Development.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> **System Status:** 🟢 Open for Full-time Opportunities / Freelance / Collaboration
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack & Architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This website is built using a modern stack to ensure high performance, optimal SEO, and a responsive user interface:
 
-## Learn More
+*   **Core:** Next.js (App Router) & TypeScript
+*   **Styling:** Tailwind CSS (Modern & Adaptive Utility-First)
+*   **Fonts:** Google Fonts Integration (Black Ops One, Chelsea Market, Playfair Display)
+*   **Deployment & Hosting:** Vercel (Automated CI/CD System)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📂 Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The project directory follows the modern Next.js App Router convention:
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```text
+muhammad-faza-portfolio/
+├── src/
+│   ├── app/                # Main Navigation & Routing (App Router)
+│   │   ├── contact/        # Contact Page
+│   │   ├── project/        # Projects Showcase & Case Studies
+│   │   ├── skill/          # Skills Matrice & Core Technologies
+│   │   ├── layout.tsx      # Global Root Layout
+│   │   └── page.tsx        # Main Gate / Homepage Landing
+│   ├── components/         # Modular UI Components (Navbar, Footer, Intro, etc.)
+│   └── data/               # Static Data & Content Management
+└── public/                 # Static Assets (Images, Resume/CV PDF, Favicon)
