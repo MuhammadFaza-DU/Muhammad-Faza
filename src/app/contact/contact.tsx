@@ -10,7 +10,7 @@ const SOCIAL = [
     href: "mailto:lexfaza@gmail.com",
     label: "Email",
     handle: "lexfaza@gmail.com",
-    icon: "/assets/icon/icon/email.png",
+    icon: "/assets/icon/icon/email.svg",
   },
   {
     href: "https://github.com/MuhammadFaza-DU",
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 href={s.href}
                 target="_blank"
                 rel="noreferrer"
-                className="btn focus-ring group rounded-3xl px-5 py-6 text-left"
+                className="btn focus-ring cursor-target group rounded-3xl px-5 py-6 text-left"
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/35">

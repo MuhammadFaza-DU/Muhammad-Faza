@@ -4,7 +4,7 @@ const SOCIALS = [
     label: "Instagram",
     icon: "/assets/icon/icon/instagram.svg",
   },
-  { href: "mailto:lexfaza@gmail.com", label: "Email", icon: "/assets/icon/icon/email.png" },
+  { href: "mailto:lexfaza@gmail.com", label: "Email", icon: "/assets/icon/icon/email.svg" },
   { href: "https://github.com/MuhammadFaza-DU", label: "GitHub", icon: "/assets/icon/icon/github.svg" },
   {
     href: "https://www.linkedin.com/in/m-faza-443479372",
@@ -21,13 +21,13 @@ const SOCIALS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t hairline bg-black/25">
+    <footer className="relative z-10 border-t hairline bg-black/25">
       <div className="mx-auto max-w-6xl px-4 py-10">
         <div className="flex items-center justify-center gap-4">
           {SOCIALS.map((s) => (
             <a
               key={s.href}
-              className="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/30 hover:opacity-90"
+              className="focus-ring cursor-target inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-black/30 hover:opacity-90"
               href={s.href}
               target="_blank"
               rel="noreferrer"

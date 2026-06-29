@@ -21,9 +21,17 @@ export const projectsData: Project[] = [
   {
     title: "Hire Ready Portfolio",
     type: "demo",
-    href: "muhammadfaza.vercel.app",
+    href: "https://muhammadfaza.vercel.app",
     description: "This website is designed to document my projects, technical skills, and professional experience in Computer Engineering, Artificial Intelligence, Embedded Intelligence, and Web Development.",
     tech: ["Next.js", "Tailwind"],
+    tag: "LIVE DEMO",
+  },
+  {
+    title: "BRAWL BUDDIES: CHAOS KITCHEN",
+    type: "demo",
+    href: "https://game-chef-pixel.pages.dev/",
+    description: "A chaotic, high-energy 2.5D side-scrolling beat 'em up built entirely for the web browser. Imagine Scott Pilgrim vs. The World crashing headfirst into Overcooked!",
+    tech: ["React.js", "Tailwind", "Node.js", "Phaser 3", "Howler.js", "Socket.io", "MySQL", "Redis"],
     tag: "LIVE DEMO",
   },
 ];

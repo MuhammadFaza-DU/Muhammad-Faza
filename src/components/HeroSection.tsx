@@ -1,27 +1,33 @@
 export default function HeroSection() {
   return (
-    <section className="grid gap-10 md:grid-cols-2 md:items-center">
-      <div className="relative">
-        <div className="panel relative overflow-hidden rounded-3xl p-7">
+    <section className="grid gap-10 md:grid-cols-2 md:items-stretch">
+      <div className="relative h-full">
+        <div className="panel relative flex h-full flex-col overflow-hidden rounded-3xl p-7">
           <div className="absolute inset-0 bg-linear-to-br from-emerald-500/10 via-transparent to-sky-400/10" />
-          <div className="relative">
+          <div className="relative flex flex-1 flex-col">
             <div />
 
-            <div className="mt-10 grid place-items-center">
-              <div className="relative grid h-56 w-56 place-items-center md:h-72 md:w-72">
-                <div className="absolute inset-0 rounded-full border border-white/10 bg-black/30 blur-[0.5px]" />
-                <div className="absolute -inset-3.5 rounded-full border border-emerald-400/20" />
-                <div className="absolute -inset-7 rounded-full border border-white/6" />
-                <div className="absolute inset-0 rounded-full bg-linear-to-b from-emerald-500/12 to-transparent" />
-                <div className="spin-tilt absolute inset-0 rounded-full" />
-                <div className="float relative grid h-60 w-60 place-items-center overflow-hidden rounded-full border border-white/10 bg-black/40 shadow-[0_16px_60px_rgba(0,0,0,.55)] md:h-60 md:w-60">
-                  <img src="/assets/icon/icon/mf_fix2.svg" alt="Logo MF" className="h-full w-full object-contain p-3" />
+            <div className="flex flex-1 items-center justify-center py-4">
+              <div className="relative grid h-48 w-48 place-items-center sm:h-56 sm:w-56 md:h-64 md:w-64">
+                {/* Ambient glow yang berdenyut */}
+                <div className="pulse-glow absolute inset-0 rounded-full bg-emerald-500/15 blur-2xl" />
+
+                {/* Dua ring independen — emerald 11s, sky 15s, pola tidak pernah sama */}
+                <div className="spin-ring-emerald absolute inset-0 rounded-full" />
+                <div className="spin-ring-sky absolute inset-0 rounded-full" />
+
+                {/* Satu hairline ring statis untuk depth */}
+                <div className="absolute -inset-3 rounded-full border border-white/8" />
+
+                {/* Badge utama berisi logo */}
+                <div className="float relative grid h-[80%] w-[80%] place-items-center overflow-hidden rounded-full border border-white/10 bg-black/40 shadow-[0_16px_60px_rgba(0,0,0,.55)]">
+                  <img src="/assets/icon/icon/mf_fix2.svg" alt="Logo MF" className="h-full w-full object-contain p-5" />
+                  <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_0_1px_rgba(255,255,255,.06)]" />
                 </div>
-                <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_0_1px_rgba(255,255,255,.05)]" />
               </div>
             </div>
 
-            <div className="mt-9 grid grid-cols-3 gap-3">
+            <div className="mt-9 grid grid-cols-1 gap-3 sm:grid-cols-3">
               <div className="panel-soft rounded-2xl p-3">
                 <p className="font-mono text-[11px] text-zinc-400">ENV</p>
                 <p className="mt-1 text-sm font-medium text-zinc-100">Hybrid</p>
@@ -55,8 +61,8 @@ export default function HeroSection() {
           <span className="badge-accent rounded-full px-3 py-1 text-sm">Python</span>
           <span className="badge-accent rounded-full px-3 py-1 text-sm">C / C++</span>
           <span className="badge-accent rounded-full px-3 py-1 text-sm">MySQL</span>
-          <span className="badge rounded-full px-3 py-1 text-sm">Next.js</span>
-          <span className="badge rounded-full px-3 py-1 text-sm">Tailwind</span>
+          <span className="badge rounded-full px-3 py-1 text-sm">TypeScript</span>
+          <span className="badge rounded-full px-3 py-1 text-sm">JavaScript</span>
           <span className="badge rounded-full px-3 py-1 text-sm">Node.js</span>
         </div>
 
@@ -65,7 +71,7 @@ export default function HeroSection() {
             href="/assets/documents/Resume.pdf"
             target="_blank"
             rel="noreferrer"
-            className="btn btn-primary focus-ring inline-flex items-center justify-between rounded-2xl px-5 py-4 text-sm font-medium text-emerald-100"
+            className="btn btn-primary focus-ring cursor-target inline-flex items-center justify-between rounded-2xl px-5 py-4 text-sm font-medium text-emerald-100"
           >
             <span className="flex items-center gap-3">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/10 text-emerald-200">
@@ -77,7 +83,7 @@ export default function HeroSection() {
 
           <a
             href="/project"
-            className="btn focus-ring inline-flex items-center justify-between rounded-2xl px-5 py-4 text-sm font-medium text-zinc-100"
+            className="btn focus-ring cursor-target inline-flex items-center justify-between rounded-2xl px-5 py-4 text-sm font-medium text-zinc-100"
           >
             <span className="flex items-center gap-3">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-black/30 text-zinc-200">
