@@ -31,7 +31,7 @@ export const projectsData: Project[] = [
     type: "demo",
     href: "https://game-chef-pixel.pages.dev/",
     description: "A chaotic, high-energy 2.5D side-scrolling beat 'em up built entirely for the web browser. Imagine Scott Pilgrim vs. The World crashing headfirst into Overcooked!",
-    tech: ["React.js", "Tailwind", "Node.js", "Phaser 3", "Howler.js", "Socket.io", "MySQL", "Redis"],
+    tech: ["React", "Tailwind", "Node.js", "Phaser 3", "Howler.js", "Socket.io", "MySQL", "Redis"],
     tag: "LIVE DEMO",
   },
 ];

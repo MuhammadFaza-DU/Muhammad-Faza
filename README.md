@@ -1,8 +1,9 @@
 # 🚀 Personal Portfolio — Muhammad Faza
 
-[![Framework](https://img.shields.io/badge/Framework-Next.js%2015-black?style=flat-square&logo=next.dotjs)](https://nextjs.org/)
+[![Framework](https://img.shields.io/badge/Framework-Next.js%2016-black?style=flat-square&logo=next.dotjs)](https://nextjs.org/)
 [![Styling](https://img.shields.io/badge/Styling-Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
 [![Deployment](https://img.shields.io/badge/Deployment-Vercel-000000?style=flat-square&logo=vercel)](https://vercel.com/)
+[![Live](https://img.shields.io/badge/Live-muhammadfaza.vercel.app-00C7B7?style=flat-square&logo=vercel)](https://muhammadfaza.vercel.app)
 
 Welcome to my personal portfolio repository. This website is designed to document my projects, technical skills, and professional experience in Computer Engineering, Artificial Intelligence, Embedded Intelligence, and Web Development.
 
@@ -14,8 +15,9 @@ Welcome to my personal portfolio repository. This website is designed to documen
 
 This website is built using a modern stack to ensure high performance, optimal SEO, and a responsive user interface:
 
-*   **Core:** Next.js (App Router) & TypeScript
+*   **Core:** Next.js 16 (App Router) & TypeScript
 *   **Styling:** Tailwind CSS (Modern & Adaptive Utility-First)
+*   **Animation:** Motion & GSAP
 *   **Fonts:** Google Fonts Integration (Black Ops One, Chelsea Market, Playfair Display)
 *   **Deployment & Hosting:** Vercel (Automated CI/CD System)
 
