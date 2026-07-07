@@ -14,7 +14,7 @@ export default function HiringSection() {
           </div>
           <span className="badge-accent hidden items-center gap-2 whitespace-nowrap rounded-full px-3 py-1 text-xs font-medium sm:inline-flex">
             <span className="blink inline-block h-2 w-2 rounded-full bg-emerald-300" />
-            Looking for Hire
+            Looking for Hire ?
           </span>
         </div>
 

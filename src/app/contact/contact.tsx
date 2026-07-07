@@ -91,7 +91,7 @@ export default function ContactPage() {
               <p className="font-mono text-xs tracking-[0.2em] text-zinc-400">AVAILABILITY</p>
               <p className="mt-2 text-sm text-zinc-200/90">Open for: Full-time / Freelance / Collaboration</p>
               <div className="mt-3 flex flex-wrap gap-2">
-                <span className="badge-accent rounded-full px-3 py-1 text-xs font-medium">Looking for Hire</span>
+                <span className="badge-accent rounded-full px-3 py-1 text-xs font-medium">Looking for Hire ?</span>
                 <span className="badge rounded-full px-3 py-1 text-xs font-medium">Remote</span>
                 <span className="badge rounded-full px-3 py-1 text-xs font-medium">Hybrid</span>
               </div>
