@@ -57,7 +57,7 @@ export default function RootLayout({
         {/* Gradual blur di tepi bawah viewport */}
         <GradualBlur
           position="bottom"
-          height="4rem"
+          height="3.3rem"
           strength={1}
           divCount={5}
           curve="ease-in"

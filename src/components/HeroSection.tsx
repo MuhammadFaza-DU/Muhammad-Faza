@@ -51,10 +51,10 @@ export default function HeroSection() {
           Hi, I’m <span className="text-emerald-300">Muhammad Faza</span>
         </h1>
         <p className="mt-4 text-sm font-light leading-relaxed text-zinc-200/80 md:text-base">
-          Computer Engineer | AI Engineer | Embedded AI | Web Developer
+          Computer Engineer | AI Engineer | Embedded AI | Web Developer | App Developer | End-to-End Builder
         </p>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-300/90">
-          Hardware & Software Engineer dedicated to building end-to-end intelligent systems. I bridge physical devices with digital ecosystems through the integration of Embedded AI, firmware, IoT, and modern web architecture. Focusing on efficiency and scalability, I'm ready to bring ideas to life, from hardware circuit design to ready-to-use application deployment.
+          I build technology that connects AI, software, and embedded systems into real-world solutions. With experience in AI engineering, web development, and app development, I enjoy transforming ideas into functional, scalable, and useful products. I'm always drawn to new challenges and innovations that push the boundaries of technology.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">

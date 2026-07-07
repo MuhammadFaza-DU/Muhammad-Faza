@@ -8,23 +8,24 @@ export type SkillCategory = {
 
 export const skillsData: SkillCategory[] = [
   {
-    title: "Main Role & Core Skill",
-    subtitle: "The most frequently used core competencies to deliver projects.",
-    badge: "PRIORITY",
-    roles: ["Computer Engineer", "AI Engineer", "Embedded Intelligence Builder"],
+    title: "Hardware Skills",
+    subtitle: "Hardware skills to design electronic systems, program microcontrollers, and deploy intelligent AI models on edge devices.",
+    roles: ["Computer Engineer", "AI Engineer", "Embedded AI"],
     skills: ["Python", "C++", "C", "Electronic Assembly"],
   },
   {
-    title: "Side Role & Side Skill",
-    subtitle: "Web skills to build clean, responsive, and deploy-ready interfaces.",
-    roles: ["Web Developer"],
+    title: "Shoftware Skills",
+    subtitle: "Software skills to design modern web interfaces, develop robust backend systems, and deploy scalable applications.",
+    roles: ["Web Developer", "App Developer", "End-to-End Builder"],
     skills: [
+      "JavaScript",
+      "TypeScript",
       "React",
       "Next",
       "Vite",
       "Node",
-      "JavaScript",
-      "TypeScript",
+      "Hono",
+      "Express",
       "HTML5",
       "CSS3",
       "Tailwind CSS",

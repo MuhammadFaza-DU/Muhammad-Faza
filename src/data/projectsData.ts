@@ -27,6 +27,14 @@ export const projectsData: Project[] = [
     tag: "LIVE DEMO",
   },
   {
+    title: "Codecraft Optimizer IDE Skill",
+    type: "github",
+    href: "https://github.com/MuhammadFaza-DU/codecraft-optimizer-ide",
+    description: "A simple CLI-based text editor application created to simulate the working of a text editor with undo/redo and multi-tab features.",
+    tech: ["Markdown"],
+    tag: "GITHUB",
+  },
+  {
     title: "BRAWL BUDDIES: CHAOS KITCHEN",
     type: "demo",
     href: "https://game-chef-pixel.pages.dev/",

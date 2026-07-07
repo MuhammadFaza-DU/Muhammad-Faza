@@ -9,7 +9,7 @@ export default function HiringSection() {
           <div>
             <h2 className="mt-3 text-3xl font-semibold text-zinc-50 md:text-5xl">Ready to Collaborate</h2>
             <p className="mt-10 max-w-xl text-sm leading-relaxed text-zinc-300/90">
-              Looking for a hybrid engineer who bridges the gap between circuits and code? I build reliable hardware and power it with smart software, maintaining a clean and highly communicative approach. Let’s turn your vision into a finished product.
+              Need a hybrid engineer to bridge physical hardware and intelligent code? I assemble robust electronic systems and build modern full-stack applications, seamlessly connecting embedded AI with web architecture. Let’s collaborate to transform your concept into a scalable, deployed solution.
             </p>
           </div>
           <span className="badge-accent hidden items-center gap-2 whitespace-nowrap rounded-full px-3 py-1 text-xs font-medium sm:inline-flex">
@@ -23,6 +23,7 @@ export default function HiringSection() {
           <span className="badge-accent rounded-full px-3 py-1 text-sm font-medium">AI Engineer</span>
           <span className="badge-accent rounded-full px-3 py-1 text-sm font-medium">Embedded AI</span>
           <span className="badge rounded-full px-3 py-1 text-sm font-medium">Web Developer</span>
+          <span className="badge rounded-full px-3 py-1 text-sm font-medium">App Developer</span>
           <span className="badge rounded-full px-3 py-1 text-sm font-medium">End-to-End Builder</span>
         </div>
         

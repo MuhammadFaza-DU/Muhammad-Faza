@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { skillsData } from "@/data/skillsData";
 
 export default function SkillPage() {
@@ -22,34 +21,34 @@ export default function SkillPage() {
       </section>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <div className="panel rounded-3xl p-7">
+        <div className="rounded-3xl border border-emerald-300/20 bg-emerald-950/12 p-7">
           <div className="flex items-start justify-between gap-6">
             <div>
-              <h2 className="mt-3 text-2xl font-semibold text-zinc-50">{core.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-300/90">{core.subtitle}</p>
+              <h2 className="mt-3 text-2xl font-semibold text-emerald-50">{core.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-emerald-50/78">{core.subtitle}</p>
             </div>
             {core.badge ? (
-              <span className="badge-accent rounded-full px-3 py-1 text-xs font-semibold">{core.badge}</span>
+              <span className="rounded-full border border-emerald-300/30 bg-emerald-400/10 px-3 py-1 text-xs font-semibold text-emerald-100">{core.badge}</span>
             ) : null}
           </div>
 
           <div className="mt-7 grid gap-4">
-            <div className="panel-soft rounded-2xl p-5">
-              <p className="font-mono text-xs tracking-[0.2em] text-zinc-400">ROLES</p>
+            <div className="rounded-2xl border border-emerald-300/14 bg-emerald-950/18 p-5">
+              <p className="font-mono text-xs tracking-[0.2em] text-emerald-100/70">ROLES</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {core.roles.map((r) => (
-                  <span key={r} className="badge-accent rounded-full px-3 py-1 text-xs font-medium">
+                  <span key={r} className="rounded-full border border-emerald-200/18 bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-50">
                     {r}
                   </span>
                 ))}
               </div>
             </div>
 
-            <div className="panel-soft rounded-2xl p-5">
-              <p className="font-mono text-xs tracking-[0.2em] text-zinc-400">SKILLS</p>
+            <div className="rounded-2xl border border-emerald-300/14 bg-emerald-950/18 p-5">
+              <p className="font-mono text-xs tracking-[0.2em] text-emerald-100/70">SKILLS</p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {core.skills.map((s) => (
-                  <span key={s} className="badge-accent rounded-full px-3 py-1 text-xs font-medium">
+                  <span key={s} className="rounded-full border border-emerald-200/18 bg-emerald-300/10 px-3 py-1 text-xs font-medium text-emerald-50">
                     {s}
                   </span>
                 ))}
@@ -94,4 +93,3 @@ export default function SkillPage() {
     </div>
   );
 }
-
