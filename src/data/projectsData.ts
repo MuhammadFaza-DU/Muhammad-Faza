@@ -35,12 +35,19 @@ export const projectsData: Project[] = [
     tag: "GITHUB",
   },
   {
-    title: "BRAWL BUDDIES: CHAOS KITCHEN",
+    title: "Brawl Buddies: Chaos Kitchen",
     type: "demo",
     href: "https://game-chef-pixel.pages.dev/",
     description: "A chaotic, high-energy 2.5D side-scrolling beat 'em up built entirely for the web browser. Imagine Scott Pilgrim vs. The World crashing headfirst into Overcooked!",
     tech: ["React", "Tailwind", "Node.js", "Phaser 3", "Howler.js", "Socket.io", "MySQL", "Redis"],
     tag: "LIVE DEMO",
   },
+    {
+    title: "Capify",
+    type: "demo",
+    href: "https://capify-v1-demo.vercel.app/",
+    description: "Capify v1 Demo is an AI-powered web app that automatically generates subtitles for short videos. Upload an MP4, edit and customize subtitles, then export the final result as an MP4, SRT, or VTT file.",
+    tech: ["React", "Tailwind", "Vite", "Zustand", "Node.js", "Fastify", "Zod", "FFmpeg"],
+    tag: "LIVE DEMO",
+  },
 ];
-
