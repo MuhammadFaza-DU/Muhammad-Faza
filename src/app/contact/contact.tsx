@@ -98,10 +98,10 @@ export default function ContactPage() {
             </div>
 
             <a
-              href="/assets/documents/Resume.pdf"
+              href="/resume"
               target="_blank"
               rel="noreferrer"
-              className="btn btn-primary focus-ring inline-flex items-center justify-between rounded-2xl px-5 py-4 text-sm font-medium text-emerald-100"
+              className="btn btn-primary focus-ring cursor-target inline-flex items-center justify-between rounded-2xl px-5 py-4 text-sm font-medium text-emerald-100"
             >
               <span className="flex items-center gap-3">
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/10 text-emerald-200">
@@ -117,4 +117,3 @@ export default function ContactPage() {
     </div>
   );
 }
-
