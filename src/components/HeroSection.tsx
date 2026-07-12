@@ -61,6 +61,7 @@ export default function HeroSection() {
           <span className="badge-accent rounded-full px-3 py-1 text-sm">Python</span>
           <span className="badge-accent rounded-full px-3 py-1 text-sm">C / C++</span>
           <span className="badge-accent rounded-full px-3 py-1 text-sm">MySQL</span>
+          <span className="badge rounded-full px-3 py-1 text-sm">Flutter</span>
           <span className="badge rounded-full px-3 py-1 text-sm">TypeScript</span>
           <span className="badge rounded-full px-3 py-1 text-sm">JavaScript</span>
           <span className="badge rounded-full px-3 py-1 text-sm">Node.js</span>

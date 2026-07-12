@@ -18,6 +18,7 @@ export const skillsData: SkillCategory[] = [
     subtitle: "Software skills to design modern web interfaces, develop robust backend systems, and deploy scalable applications.",
     roles: ["Web Developer", "App Developer", "End-to-End Builder"],
     skills: [
+      "Flutter",
       "JavaScript",
       "TypeScript",
       "React",
@@ -29,7 +30,7 @@ export const skillsData: SkillCategory[] = [
       "HTML5",
       "CSS3",
       "Tailwind CSS",
-      "Database Management (MySQL)",
+      "Database Management (SQL)",
     ],
   },
 ];

@@ -42,12 +42,20 @@ export const projectsData: Project[] = [
     tech: ["React", "Tailwind", "Node.js", "Phaser 3", "Howler.js", "Socket.io", "MySQL", "Redis"],
     tag: "LIVE DEMO",
   },
-    {
+  {
     title: "Capify",
     type: "demo",
     href: "https://capify-v1-demo.vercel.app/",
     description: "Capify v1 Demo is an AI-powered web app that automatically generates subtitles for short videos. Upload an MP4, edit and customize subtitles, then export the final result as an MP4, SRT, or VTT file.",
     tech: ["React", "Tailwind", "Vite", "Zustand", "Node.js", "Fastify", "Zod", "FFmpeg"],
     tag: "LIVE DEMO",
+  },
+  {
+    title: "Tazk",
+    type: "github",
+    href: "https://github.com/MuhammadFaza-DU/Tazk-Android-App",
+    description: "The app is designed for short everyday check-ins: see what matters today, complete tasks and habits, keep focus sessions moving, and track progress without needing an account or internet connection.",
+    tech: ["Flutter", "SQLite", "Riverpod"],
+    tag: "GITHUB",
   },
 ];
