@@ -58,4 +58,12 @@ export const projectsData: Project[] = [
     tech: ["Flutter", "SQLite", "Riverpod"],
     tag: "GITHUB",
   },
+  {
+    title: "Stack Crate",
+    type: "demo",
+    href: "https://stack-crate.vercel.app/",
+    description: "A public web aggregator for video-editing assets (audio + video). Browse, search, preview, and download curated creative assets — all free, no sign-up required to explore.",
+    tech: ["React", "Tailwind", "Vite", "Supabase", "Node.js", "Cloudflare R2"],
+    tag: "LIVE DEMO",
+  },
 ];
