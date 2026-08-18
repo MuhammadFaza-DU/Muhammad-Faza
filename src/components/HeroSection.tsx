@@ -24,7 +24,7 @@ export default function HeroSection() {
             <div />
 
             <div className="flex flex-1 flex-col items-center justify-center py-4">
-              <div className="relative w-full max-w-[300px] aspect-[3/4] sm:max-w-[340px] md:max-w-[380px]">
+              <div className="relative h-[260px] w-full max-w-[300px] sm:h-[300px] sm:max-w-[340px] md:h-[340px] md:max-w-[380px]">
                 {!isTouchDevice && <Spotlight className="-top-10 left-0" />}
                 <SplineScene scene={SPLINE_SCENE_URL} className="h-full w-full" />
               </div>
@@ -49,7 +49,7 @@ export default function HeroSection() {
         <div className="pointer-events-none absolute -bottom-12 -left-8 h-56 w-56 rounded-full bg-emerald-500/10 blur-3xl" />
       </div>
 
-      <div>
+      <div className="flex flex-col justify-center">
         <h1 className="mt-4 text-4xl font-semibold leading-tight text-zinc-50 md:text-5xl">
           Hi, I’m <span className="text-emerald-300">Muhammad Faza</span>
         </h1>
