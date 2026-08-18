@@ -83,7 +83,7 @@ export default function ContactPage() {
         <div className="panel rounded-3xl p-7">
           <h2 className="mt-3 text-2xl font-semibold text-zinc-50">Prefer channel?</h2>
           <p className="mt-8 text-sm leading-relaxed text-zinc-300/90">
-            Contact me via Instagram or Email for work purposes. However, if you'd like to see my footprint in the tech world, you can visit all of my social media channels.
+            Contact me via Instagram or Email for work purposes. However, if you&apos;d like to see my footprint in the tech world, you can visit all of my social media channels.
           </p>
 
           <div className="mt-11 grid gap-9">

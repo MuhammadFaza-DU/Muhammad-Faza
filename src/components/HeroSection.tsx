@@ -54,7 +54,7 @@ export default function HeroSection() {
           Computer Engineer | AI Engineer | Embedded AI | Web Developer | App Developer | End-to-End Builder
         </p>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-zinc-300/90">
-          I build technology that connects AI, software, and embedded systems into real-world solutions. With experience in AI engineering, web development, and app development, I enjoy transforming ideas into functional, scalable, and useful products. I'm always drawn to new challenges and innovations that push the boundaries of technology.
+          I build technology that connects AI, software, and embedded systems into real-world solutions. With experience in AI engineering, web development, and app development, I enjoy transforming ideas into functional, scalable, and useful products. I&apos;m always drawn to new challenges and innovations that push the boundaries of technology.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-3">

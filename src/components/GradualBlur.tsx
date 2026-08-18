@@ -106,7 +106,7 @@ export default function GradualBlur(props: GradualBlurProps) {
     const curveFunc = CURVE_FUNCTIONS[config.curve] || CURVE_FUNCTIONS.linear;
 
     for (let i = 1; i <= config.divCount; i++) {
-      let progress = curveFunc(i / config.divCount);
+      const progress = curveFunc(i / config.divCount);
       const blurValue = config.exponential
         ? Math.pow(2, progress * 4) * 0.0625 * currentStrength
         : 0.0625 * (progress * config.divCount + 1) * currentStrength;
