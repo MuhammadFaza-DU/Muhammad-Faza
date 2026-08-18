@@ -42,3 +42,7 @@ PRODUCT.md
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# graphify
+graphify-out/cache/
+graphify-out/cost.json
