@@ -5,12 +5,12 @@
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 216 nodes · 237 edges · 23 communities (19 shown, 4 thin omitted)
+- 216 nodes · 222 edges · 24 communities (20 shown, 4 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `a358e663`
+- Built from commit: `3c691d85`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -34,6 +34,7 @@
 - HeroSection.tsx
 - Design: "Living Surface" — Polish UI/UX
 - Global Constraints
+- TargetCursor.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
@@ -43,9 +44,9 @@
 5. `Global Constraints` - 6 edges
 6. `Global Constraints` - 6 edges
 7. `scripts` - 5 edges
-8. `HeroSection()` - 5 edges
-9. `Reveal()` - 5 edges
-10. `TargetCursor()` - 4 edges
+8. `HeroSection()` - 4 edges
+9. `lib` - 4 edges
+10. `TargetCursor()` - 3 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Spotlight()` --calls--> `cn()`  [EXTRACTED]
@@ -54,27 +55,27 @@
 ## Import Cycles
 - None detected.
 
-## Communities (23 total, 4 thin omitted)
+## Communities (24 total, 4 thin omitted)
 
 ### Community 0 - "layout.tsx"
-Cohesion: 0.10
-Nodes (17): Intro(), blackOpsOne, chelseaMarket, metadata, playfair, ConstellationBackground(), Node, Footer() (+9 more)
+Cohesion: 0.09
+Nodes (8): blackOpsOne, chelseaMarket, metadata, playfair, ConstellationBackground(), Node, SOCIALS, NAV
 
 ### Community 1 - "compilerOptions"
 Cohesion: 0.11
 Nodes (19): dom, dom.iterable, esnext, compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules (+11 more)
 
 ### Community 2 - "project.tsx"
-Cohesion: 0.11
-Nodes (14): ContactPage(), SOCIAL, Filter, FILTERS, ProjectPage(), SkillPage(), Reveal(), RevealProps (+6 more)
+Cohesion: 0.15
+Nodes (9): Filter, FILTERS, ProjectPage(), SkillPage(), Project, ProjectLinkType, projectsData, SkillCategory (+1 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.12
 Nodes (17): eslint, eslint-config-next, devDependencies, eslint, eslint-config-next, tailwindcss, @tailwindcss/postcss, @types/node (+9 more)
 
 ### Community 4 - "home.tsx"
-Cohesion: 0.31
-Nodes (4): HomePage(), HiringSection(), TiltPhoto(), TiltPhotoProps
+Cohesion: 0.14
+Nodes (6): ContactPage(), SOCIAL, HomePage(), RevealProps, TiltPhoto(), TiltPhotoProps
 
 ### Community 5 - "dependencies"
 Cohesion: 0.11
@@ -116,8 +117,12 @@ Nodes (9): Approach: A — "Living Surface", Constraints, Design: "Living Surfac
 Cohesion: 0.22
 Nodes (8): Global Constraints, "Living Surface" Polish Implementation Plan, Self-Review, Task 1: ConstellationBackground component + integrasi layout, Task 2: Reveal component + PageTransition refine, Task 3: globals.css component polish (panel, btn, badge), Task 4: Integrasi Reveal ke semua halaman, Task 5: Navbar hide on scroll down
 
+### Community 24 - "TargetCursor.tsx"
+Cohesion: 0.60
+Nodes (4): getContainingBlock(), getContainingBlockOffset(), TargetCursor(), TargetCursorProps
+
 ## Knowledge Gaps
-- **104 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+99 more)
+- **105 isolated node(s):** `NAV`, `SOCIAL`, `Filter`, `FILTERS`, `RevealProps` (+100 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -130,11 +135,11 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.024) - this node is a cross-community bridge._
 - **Why does `compilerOptions` connect `compilerOptions` to `include`?**
   _High betweenness centrality (0.014) - this node is a cross-community bridge._
-- **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
-  _104 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `NAV`, `SOCIAL`, `Filter` to the rest of the system?**
+  _105 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `layout.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.09788359788359788 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.09090909090909091 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `project.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.10826210826210826 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.14619883040935672 - nodes in this community are weakly interconnected._

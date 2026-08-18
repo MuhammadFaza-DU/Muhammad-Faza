@@ -267,7 +267,9 @@ git commit -m "feat: add spotlight component adapted to motion/react"
 
 Run `read` pada `src/components/HeroSection.tsx` untuk konteks persis (hindari mengedit dari hafalan).
 
-- [ ] **Step 2: Tambahkan imports**
+- [ ] **Step 2: Jadikan komponen client + tambahkan imports**
+
+Tambahkan `"use client"` di baris pertama file, lalu:
 
 ```tsx
 import { useEffect, useState } from "react";
@@ -277,12 +279,16 @@ import { Spotlight } from "@/components/ui/spotlight";
 const SPLINE_SCENE_URL = "https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode";
 ```
 
-Tambahkan deteksi `isTouchDevice` (data di awal komponen, bukan state — dihitung sekali):
+Deteksi touch pakai state + effect (WAJIB — hindari hydration mismatch karena `window` tidak tersedia saat SSR):
 
 ```tsx
-const isTouchDevice =
-  typeof window !== "undefined" &&
-  ("ontouchstart" in window || navigator.maxTouchPoints > 0);
+const [isTouchDevice, setIsTouchDevice] = useState(false);
+
+useEffect(() => {
+  const isTouch =
+    "ontouchstart" in window || navigator.maxTouchPoints > 0;
+  setIsTouchDevice(isTouch);
+}, []);
 ```
 
 - [ ] **Step 3: Ganti blok badge logo (grid h-48 w-48 ... sampai logo MF) dengan slot robot**
