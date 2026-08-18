@@ -159,6 +159,25 @@ h3 {
   transform: translateY(0) scale(0.98);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn::after,
+  .badge-accent {
+    transition: none;
+  }
+
+  .btn::after,
+  .btn:hover::after {
+    transform: none;
+    opacity: 0;
+  }
+
+  .btn:hover,
+  .btn:active {
+    transform: none;
+  }
+}
+
 .btn-primary {
   background: linear-gradient(180deg, rgba(16, 185, 129, 0.22), rgba(16, 185, 129, 0.1));
   border-color: rgba(52, 211, 153, 0.52);
