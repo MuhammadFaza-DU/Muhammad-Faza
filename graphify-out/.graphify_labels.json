@@ -1,13 +1,14 @@
 {
   "0": "layout.tsx",
   "1": "compilerOptions",
-  "2": "project.tsx",
+  "2": "home.tsx",
   "3": "devDependencies",
-  "4": "home.tsx",
+  "4": "Global Constraints",
   "5": "dependencies",
-  "6": "include",
+  "6": "error.tsx",
   "7": "GradualBlur.tsx",
   "8": "package.json",
+  "9": "Design: Performance, SEO & Metadata, Bug Stabilization",
   "10": "Global Constraints",
   "11": "eslint.config.mjs",
   "12": "next.config.ts",
@@ -21,5 +22,13 @@
   "20": "AGENTS.md",
   "21": "HeroSection.tsx",
   "22": "Design: \"Living Surface\" — Polish UI/UX",
-  "23": "Global Constraints"
+  "23": "Global Constraints",
+  "24": "generate-assets.mjs",
+  "25": "not-found.tsx",
+  "26": "robots.ts",
+  "27": "sitemap.ts",
+  "28": "contact.tsx",
+  "29": "include",
+  "30": "Phase 3 — Bug & Stabilization",
+  "31": "TargetCursor.tsx"
 }
