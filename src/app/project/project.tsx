@@ -77,37 +77,48 @@ export default function ProjectPage() {
               {filtered.map((p, index) => (
                 <Reveal key={p.title} delay={index * 0.08}>
                   <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="panel cursor-target group rounded-3xl p-6 transition hover:-translate-y-0.5"
-                >
-                  <div className="flex items-start justify-between gap-4">
-                    <div>
-                      <p className="font-mono text-xs tracking-[0.2em] text-zinc-400">{p.tag}</p>
-                      <h2 className="mt-2 text-lg font-semibold text-zinc-50">{p.title}</h2>
-                    </div>
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/30">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={
-                          p.type === "github"
-                            ? "/assets/icon/icon/github.svg"
-                            : "/assets/icon/icon/external.svg"
-                        }
-                        alt=""
-                        className="h-5 w-5 opacity-90 group-hover:opacity-100"
-                      />
-                    </span>
-                  </div>
-                  <p className="mt-4 text-sm leading-relaxed text-zinc-300/90">{p.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {p.tech.map((t) => (
-                      <span key={t} className="badge rounded-full px-3 py-1 text-xs">
-                        {t}
+                    href={p.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="panel group relative flex min-h-[340px] cursor-target flex-col overflow-hidden rounded-2xl border-white/10 p-5 transition duration-200 hover:-translate-y-1 hover:border-emerald-400/35"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className={[
+                        "absolute inset-y-0 left-0 w-0.5 transition-colors duration-200",
+                        p.type === "demo"
+                          ? "bg-emerald-400/55 group-hover:bg-emerald-300"
+                          : "bg-white/55 group-hover:bg-white/90",
+                      ].join(" ")}
+                    />
+                    <div className="flex items-start justify-between gap-4">
+                      <div>
+                        <p className="font-mono text-xs tracking-[0.2em] text-zinc-400">{p.tag}</p>
+                        <h2 className="mt-2 text-lg font-semibold text-zinc-50">{p.title}</h2>
+                      </div>
+                      <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-white/10 bg-black/30">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={
+                            p.type === "github"
+                              ? "/assets/icon/icon/github.svg"
+                              : "/assets/icon/icon/external.svg"
+                          }
+                          alt=""
+                          className="h-4 w-4 opacity-75 transition-opacity group-hover:opacity-100"
+                        />
                       </span>
-                    ))}
-                  </div>
+                    </div>
+                    <p className="mt-5 line-clamp-4 max-w-[34ch] text-sm leading-6 text-zinc-300/90">
+                      {p.description}
+                    </p>
+                    <div className="mt-auto flex min-h-8 flex-wrap gap-2 pt-6">
+                      {p.tech.map((t) => (
+                        <span key={t} className="badge rounded-full px-3 py-1 text-xs">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
                   </a>
                 </Reveal>
               ))}

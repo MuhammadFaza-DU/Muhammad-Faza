@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { projectsData } from "@/data/projectsData";
 import { skillsData } from "@/data/skillsData";
 
@@ -32,11 +33,11 @@ export default function StatsSection() {
 
       <div className="flex items-center py-10">
         {stats.map((s, i) => (
-          <>
+          <Fragment key={s.label}>
             {i > 0 && (
               <span key={`sep-${i}`} className="h-10 w-px shrink-0 bg-white/8" aria-hidden="true" />
             )}
-            <div key={s.label} className="flex flex-1 flex-col items-center gap-2 text-center">
+            <div className="flex flex-1 flex-col items-center gap-2 text-center">
               <p
                 className="text-2xl text-emerald-300 sm:text-4xl md:text-5xl"
                 style={{ fontFamily: "var(--font-blackops)", letterSpacing: "0.02em" }}
@@ -47,7 +48,7 @@ export default function StatsSection() {
                 {s.label}
               </p>
             </div>
-          </>
+          </Fragment>
         ))}
       </div>
 

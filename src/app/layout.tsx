@@ -6,9 +6,7 @@ import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/PageTransition";
 import ParallaxBackground from "@/components/ParallaxBackground";
 import ConstellationBackground from "@/components/ConstellationBackground";
-import GradualBlur from "@/components/GradualBlur";
 import TargetCursor from "@/components/TargetCursor";
-import Intro from "./intro";
 
 const blackOpsOne = Black_Ops_One({
   variable: "--font-blackops",
@@ -93,17 +91,6 @@ export default function RootLayout({
         <ParallaxBackground />
         <ConstellationBackground />
 
-        {/* Gradual blur di tepi bawah viewport */}
-        <GradualBlur
-          position="bottom"
-          height="3.3rem"
-          strength={1}
-          divCount={5}
-          curve="ease-in"
-          target="page"
-          zIndex={3}
-        />
-
         <a
           href="#content"
           className="sr-only focus:not-sr-only focus-ring fixed left-4 top-4 z-50 rounded-full bg-black/70 px-4 py-2 text-sm"
@@ -111,7 +98,6 @@ export default function RootLayout({
           Skip to content
         </a>
 
-        <Intro />
         <Navbar />
 
         <main id="content" className="relative z-10 flex-1">

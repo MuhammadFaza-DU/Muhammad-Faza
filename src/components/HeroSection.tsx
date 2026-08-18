@@ -1,6 +1,7 @@
 "use client";
 
 import { useSyncExternalStore } from "react";
+import { motion, useReducedMotion } from "motion/react";
 import { SplineScene } from "@/components/ui/splite";
 import { Spotlight } from "@/components/ui/spotlight";
 
@@ -14,6 +15,7 @@ const getServerSnapshot = () => false;
 
 export default function HeroSection() {
   const isTouchDevice = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+  const reduceMotion = useReducedMotion();
 
   return (
     <section className="grid gap-10 md:grid-cols-2 md:items-stretch">
@@ -26,7 +28,14 @@ export default function HeroSection() {
             <div className="flex flex-1 flex-col items-center justify-center py-4">
               <div className="relative h-[260px] w-full max-w-[300px] sm:h-[300px] sm:max-w-[340px] md:h-[340px] md:max-w-[380px]">
                 {!isTouchDevice && <Spotlight className="-top-10 left-0" />}
-                <SplineScene scene={SPLINE_SCENE_URL} className="h-full w-full" />
+                <motion.div
+                  className="h-full w-full"
+                  initial={reduceMotion ? false : { opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <SplineScene scene={SPLINE_SCENE_URL} className="h-full w-full" />
+                </motion.div>
               </div>
             </div>
 
