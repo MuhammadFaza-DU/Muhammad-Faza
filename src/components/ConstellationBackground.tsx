@@ -20,7 +20,7 @@ export default function ConstellationBackground() {
     let width = 0;
     let height = 0;
     const mouse = { x: -9999, y: -9999 };
-    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+    const DPR = Math.min(window.devicePixelRatio || 1, window.innerWidth < 768 ? 1.5 : 2);
     const LINK_DIST = 130;
     const REPEL_DIST = 110;
 
@@ -56,7 +56,15 @@ export default function ConstellationBackground() {
       mouse.y = -9999;
     };
 
+    let running = true;
+    const onVisibility = () => {
+      running = document.visibilityState === "visible";
+      if (!running) cancelAnimationFrame(raf);
+      else tick();
+    };
+
     const tick = () => {
+      if (!running) return;
       ctx.clearRect(0, 0, width, height);
 
       for (const n of nodes) {
@@ -115,12 +123,14 @@ export default function ConstellationBackground() {
     window.addEventListener("resize", resize);
     window.addEventListener("pointermove", onMove);
     window.addEventListener("pointerleave", onLeave);
+    document.addEventListener("visibilitychange", onVisibility);
 
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerleave", onLeave);
+      document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
 
