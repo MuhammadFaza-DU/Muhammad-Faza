@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { projectsData, type ProjectLinkType } from "@/data/projectsData";
+import Reveal from "@/components/Reveal";
 
 type Filter = "all" | ProjectLinkType;
 
@@ -20,34 +21,36 @@ export default function ProjectPage() {
 
   return (
     <div className="mx-auto max-w-6xl px-4 pb-16 pt-10">
-      <section className="panel rounded-3xl p-7">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h1 className="mt-2 text-3xl font-semibold text-zinc-50 md:text-4xl">Project Gallery</h1>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-300/90">
-              This is proof of my journey to become a hybrid engineer.
-            </p>
-          </div>
+      <Reveal>
+        <section className="panel rounded-3xl p-7">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h1 className="mt-2 text-3xl font-semibold text-zinc-50 md:text-4xl">Project Gallery</h1>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-300/90">
+                This is proof of my journey to become a hybrid engineer.
+              </p>
+            </div>
 
-          {/* Filter nav */}
-          <div className="flex gap-2">
-            {FILTERS.map((f) => (
-              <button
-                key={f.key}
-                onClick={() => setActive(f.key)}
-                className={[
-                  "cursor-target rounded-full px-4 py-1.5 text-xs font-medium transition-all duration-200",
-                  active === f.key
-                    ? "border border-emerald-400/50 bg-emerald-500/15 text-emerald-200"
-                    : "border border-white/10 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100",
-                ].join(" ")}
-              >
-                {f.label}
-              </button>
-            ))}
+            {/* Filter nav */}
+            <div className="flex gap-2">
+              {FILTERS.map((f) => (
+                <button
+                  key={f.key}
+                  onClick={() => setActive(f.key)}
+                  className={[
+                    "cursor-target rounded-full px-4 py-1.5 text-xs font-medium transition-all duration-200",
+                    active === f.key
+                      ? "border border-emerald-400/50 bg-emerald-500/15 text-emerald-200"
+                      : "border border-white/10 bg-zinc-900/50 text-zinc-400 hover:text-zinc-100",
+                  ].join(" ")}
+                >
+                  {f.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
 
       <section className="mt-8 min-h-48">
         <AnimatePresence mode="wait">
@@ -71,9 +74,9 @@ export default function ProjectPage() {
               transition={{ duration: 0.2, ease: "easeOut" }}
               className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
             >
-              {filtered.map((p) => (
-                <a
-                  key={p.title}
+              {filtered.map((p, index) => (
+                <Reveal key={p.title} delay={index * 0.08}>
+                  <a
                   href={p.href}
                   target="_blank"
                   rel="noreferrer"
@@ -104,7 +107,8 @@ export default function ProjectPage() {
                       </span>
                     ))}
                   </div>
-                </a>
+                  </a>
+                </Reveal>
               ))}
             </motion.div>
           )}

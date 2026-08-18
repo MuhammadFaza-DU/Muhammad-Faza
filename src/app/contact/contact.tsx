@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Reveal from "@/components/Reveal";
 const SOCIAL = [
   {
     href: "https://www.instagram.com/mfaz.aa?igsh=MWVlMDdrbDVjZzhjYg==",
@@ -41,16 +42,19 @@ const SOCIAL = [
 export default function ContactPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 pb-16 pt-10">
-      <section className="panel rounded-3xl p-7">
-        <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h1 className="mt-3 text-3xl font-semibold text-zinc-50 md:text-4xl">Let’s Talk</h1>
+      <Reveal>
+        <section className="panel rounded-3xl p-7">
+          <div className="flex flex-col gap-5 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h1 className="mt-3 text-3xl font-semibold text-zinc-50 md:text-4xl">Let’s Talk</h1>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <div className="panel rounded-3xl p-7">
+        <Reveal delay={0.1}>
+          <div className="panel rounded-3xl p-7">
           <h2 className="mt-3 text-2xl font-semibold text-zinc-50">Social Profiles</h2>
           <p className="mt-3 text-sm leading-relaxed text-zinc-300/90">Click the icon to open my social media profiles.</p>
 
@@ -78,9 +82,11 @@ export default function ContactPage() {
               </a>
             ))}
           </div>
-        </div>
+          </div>
+        </Reveal>
 
-        <div className="panel rounded-3xl p-7">
+        <Reveal delay={0.2}>
+          <div className="panel rounded-3xl p-7">
           <h2 className="mt-3 text-2xl font-semibold text-zinc-50">Prefer channel?</h2>
           <p className="mt-8 text-sm leading-relaxed text-zinc-300/90">
             Contact me via Instagram or Email for work purposes. However, if you&apos;d like to see my footprint in the tech world, you can visit all of my social media channels.
@@ -112,7 +118,8 @@ export default function ContactPage() {
               <span className="font-mono text-xs text-emerald-200/80">→</span>
             </a>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </section>
     </div>
   );

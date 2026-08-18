@@ -1,27 +1,31 @@
 import { skillsData } from "@/data/skillsData";
+import Reveal from "@/components/Reveal";
 
 export default function SkillPage() {
   const [core, side] = skillsData;
 
   return (
     <div className="mx-auto max-w-6xl px-4 pb-16 pt-10">
-      <section className="panel rounded-3xl p-7">
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          <div>
-            <h1 className="mt-3 text-3xl font-semibold text-zinc-50 md:text-4xl">Skill Matrix</h1>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-300/90">
-              On this page, you will find out who I am, from the main role to the supporting role.
-            </p>
+      <Reveal>
+        <section className="panel rounded-3xl p-7">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h1 className="mt-3 text-3xl font-semibold text-zinc-50 md:text-4xl">Skill Matrix</h1>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-zinc-300/90">
+                On this page, you will find out who I am, from the main role to the supporting role.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <span className="badge-accent rounded-full px-3 py-1 text-xs font-medium">Hardware Engineer</span>
+              <span className="badge rounded-full px-3 py-1 text-xs font-medium">Shoftware Engineer</span>
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2">
-            <span className="badge-accent rounded-full px-3 py-1 text-xs font-medium">Hardware Engineer</span>
-            <span className="badge rounded-full px-3 py-1 text-xs font-medium">Shoftware Engineer</span>
-          </div>
-        </div>
-      </section>
+        </section>
+      </Reveal>
 
       <section className="mt-8 grid gap-6 lg:grid-cols-2">
-        <div className="rounded-3xl border border-emerald-300/20 bg-emerald-950/12 p-7">
+        <Reveal delay={0.1}>
+          <div className="rounded-3xl border border-emerald-300/20 bg-emerald-950/12 p-7">
           <div className="flex items-start justify-between gap-6">
             <div>
               <h2 className="mt-3 text-2xl font-semibold text-emerald-50">{core.title}</h2>
@@ -55,9 +59,11 @@ export default function SkillPage() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </Reveal>
 
-        <div className="panel rounded-3xl p-7">
+        <Reveal delay={0.2}>
+          <div className="panel rounded-3xl p-7">
           <div>
             <h2 className="mt-3 text-2xl font-semibold text-zinc-50">{side.title}</h2>
             <p className="mt-3 text-sm leading-relaxed text-zinc-300/90">{side.subtitle}</p>
@@ -86,7 +92,8 @@ export default function SkillPage() {
               </div>
             </div>
           </div>
-        </div>
+          </div>
+        </Reveal>
       </section>
 
       
