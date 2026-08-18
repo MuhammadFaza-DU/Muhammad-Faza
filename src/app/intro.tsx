@@ -9,6 +9,7 @@ export default function Intro() {
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const seen = window.sessionStorage.getItem(KEY);
     if (seen) return;
 
@@ -21,7 +22,7 @@ export default function Intro() {
     const hideId = window.setTimeout(() => {
       setVisible(false);
       document.body.style.overflow = prevOverflow;
-    }, 1950);
+    }, 1100);
 
     return () => {
       window.clearTimeout(showId);
