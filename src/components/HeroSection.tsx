@@ -1,29 +1,32 @@
+"use client";
+
+import { useSyncExternalStore } from "react";
+import { SplineScene } from "@/components/ui/splite";
+import { Spotlight } from "@/components/ui/spotlight";
+
+const SPLINE_SCENE_URL = "https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode";
+
+const subscribe = () => () => {};
+
+const getSnapshot = () => "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
+const getServerSnapshot = () => false;
+
 export default function HeroSection() {
+  const isTouchDevice = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
+
   return (
     <section className="grid gap-10 md:grid-cols-2 md:items-stretch">
       <div className="relative h-full">
         <div className="panel relative flex h-full flex-col overflow-hidden rounded-3xl p-7">
-          <div className="absolute inset-0 bg-linear-to-br from-emerald-500/10 via-transparent to-sky-400/10" />
+          <div className="absolute inset-0 bg-linear-to-br from-emerald-500/5 via-transparent to-sky-400/5" />
           <div className="relative flex flex-1 flex-col">
             <div />
 
-            <div className="flex flex-1 items-center justify-center py-4">
-              <div className="relative grid h-48 w-48 place-items-center sm:h-56 sm:w-56 md:h-64 md:w-64">
-                {/* Ambient glow yang berdenyut */}
-                <div className="pulse-glow absolute inset-0 rounded-full bg-emerald-500/15 blur-2xl" />
-
-                {/* Dua ring independen — emerald 11s, sky 15s, pola tidak pernah sama */}
-                <div className="spin-ring-emerald absolute inset-0 rounded-full" />
-                <div className="spin-ring-sky absolute inset-0 rounded-full" />
-
-                {/* Satu hairline ring statis untuk depth */}
-                <div className="absolute -inset-3 rounded-full border border-white/8" />
-
-                {/* Badge utama berisi logo */}
-                <div className="float relative grid h-[80%] w-[80%] place-items-center overflow-hidden rounded-full border border-white/10 bg-black/40 shadow-[0_16px_60px_rgba(0,0,0,.55)]">
-                  <img src="/assets/icon/icon/mf_fix2.svg" alt="Logo MF" className="h-full w-full object-contain p-5" />
-                  <div className="pointer-events-none absolute inset-0 rounded-full shadow-[inset_0_0_0_1px_rgba(255,255,255,.06)]" />
-                </div>
+            <div className="flex flex-1 flex-col items-center justify-center py-4">
+              <div className="relative w-full max-w-[300px] aspect-[3/4] sm:max-w-[340px] md:max-w-[380px]">
+                {!isTouchDevice && <Spotlight className="-top-10 left-0" />}
+                <SplineScene scene={SPLINE_SCENE_URL} className="h-full w-full" />
               </div>
             </div>
 
