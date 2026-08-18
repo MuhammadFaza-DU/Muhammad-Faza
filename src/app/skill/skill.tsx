@@ -17,7 +17,7 @@ export default function SkillPage() {
             </div>
             <div className="flex flex-wrap gap-2">
               <span className="badge-accent rounded-full px-3 py-1 text-xs font-medium">Hardware Engineer</span>
-              <span className="badge rounded-full px-3 py-1 text-xs font-medium">Shoftware Engineer</span>
+              <span className="badge rounded-full px-3 py-1 text-xs font-medium">Software Engineer</span>
             </div>
           </div>
         </section>
