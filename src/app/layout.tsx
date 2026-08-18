@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import PageTransition from "@/components/PageTransition";
 import ParallaxBackground from "@/components/ParallaxBackground";
+import ConstellationBackground from "@/components/ConstellationBackground";
 import GradualBlur from "@/components/GradualBlur";
 import TargetCursor from "@/components/TargetCursor";
 import Intro from "./intro";
@@ -53,6 +54,7 @@ export default function RootLayout({
         suppressHydrationWarning={true}
       >
         <ParallaxBackground />
+        <ConstellationBackground />
 
         {/* Gradual blur di tepi bawah viewport */}
         <GradualBlur
