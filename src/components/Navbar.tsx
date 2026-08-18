@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
-import { motion, useScroll, useSpring } from "motion/react";
+import { motion, useMotionValueEvent, useReducedMotion, useScroll, useSpring } from "motion/react";
 
 const NAV = [
   { href: "/", label: "Home" },
@@ -41,8 +41,17 @@ function IconClose(props: React.SVGProps<SVGSVGElement>) {
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
-  const { scrollYProgress } = useScroll();
+  const [hidden, setHidden] = useState(false);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress, scrollY } = useScroll();
   const progress = useSpring(scrollYProgress, { stiffness: 220, damping: 32, mass: 0.3 });
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    if (reduceMotion) return;
+    const prev = scrollY.getPrevious() ?? 0;
+    if (latest > prev && latest > 120) setHidden(true);
+    else setHidden(false);
+  });
 
   const activeHref = useMemo(() => {
     if (!pathname) return "/";
@@ -52,7 +61,11 @@ export default function Navbar() {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-40">
+    <motion.header
+      className="sticky top-0 z-40"
+      animate={{ y: hidden ? "-100%" : "0%" }}
+      transition={reduceMotion ? { duration: 0 } : { duration: 0.3, ease: "easeOut" }}
+    >
       <div className="border-b border-white/6 bg-black/35 backdrop-blur-2xl">
         <div className="mx-auto max-w-6xl px-5">
           <div className="flex h-16 items-center justify-between">
@@ -147,6 +160,6 @@ export default function Navbar() {
           </div>
         </div>
       ) : null}
-    </header>
+    </motion.header>
   );
 }
