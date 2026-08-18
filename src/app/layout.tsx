@@ -28,13 +28,50 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Muhammad Faza | Portofolio",
+  metadataBase: new URL("https://muhammadfaza.vercel.app"),
+  title: {
+    default: "Muhammad Faza — Computer Engineer, AI Engineer, Embedded AI & Web Developer",
+    template: "%s | Muhammad Faza",
+  },
   description:
-    "Personal portfolio Muhammad Faza — Computer Engineer, AI Engineer, Embedded Intelligence Builder, Web Developer.",
+    "Portfolio of Muhammad Faza — a hybrid engineer bridging hardware and software: Computer Engineering, AI Engineering, Embedded AI, and Web Development. Open for full-time, freelance, and collaboration.",
+  keywords: [
+    "Muhammad Faza",
+    "Computer Engineer",
+    "AI Engineer",
+    "Embedded AI",
+    "Web Developer",
+    "Software Engineer",
+    "Hardware Engineer",
+    "Portfolio",
+  ],
+  authors: [{ name: "Muhammad Faza" }],
+  creator: "Muhammad Faza",
+  robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    apple: "/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://muhammadfaza.vercel.app",
+    siteName: "Muhammad Faza",
+    title: "Muhammad Faza — Computer Engineer, AI Engineer, Embedded AI & Web Developer",
+    description:
+      "Portfolio of Muhammad Faza — a hybrid engineer bridging hardware and software. Open for full-time, freelance, and collaboration.",
+    images: [
+      { url: "/og.png", width: 1200, height: 630, alt: "Muhammad Faza Portfolio" },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Faza — Computer Engineer, AI Engineer",
+    description:
+      "Portfolio of Muhammad Faza — a hybrid engineer bridging hardware and software.",
+    images: ["/og.png"],
   },
 };
 
@@ -45,7 +82,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="id"
+      lang="en"
       className={`${blackOpsOne.variable} ${chelseaMarket.variable} ${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
@@ -89,6 +126,44 @@ export default function RootLayout({
           cursorColorOnTarget="#ffffff"
           spinDuration={3}
           parallaxOn={true}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  "@id": "https://muhammadfaza.vercel.app/#person",
+                  name: "Muhammad Faza",
+                  url: "https://muhammadfaza.vercel.app",
+                  email: "mailto:lexfaza@gmail.com",
+                  jobTitle: [
+                    "Computer Engineer",
+                    "AI Engineer",
+                    "Embedded AI Engineer",
+                    "Web Developer",
+                  ],
+                  sameAs: [
+                    "https://www.instagram.com/mfaz.aa",
+                    "https://github.com/MuhammadFaza-DU",
+                    "https://www.linkedin.com/in/m-faza-443479372",
+                    "https://www.youtube.com/@MuhammadFaza-justone",
+                    "https://www.tiktok.com/@mfaz.aa",
+                  ],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://muhammadfaza.vercel.app/#website",
+                  name: "Muhammad Faza",
+                  url: "https://muhammadfaza.vercel.app",
+                  inLanguage: "en",
+                },
+              ],
+            }),
+          }}
         />
       </body>
     </html>
