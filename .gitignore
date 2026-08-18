@@ -46,3 +46,6 @@ next-env.d.ts
 # graphify
 graphify-out/cache/
 graphify-out/cost.json
+
+# security scan artifacts
+strix_runs/

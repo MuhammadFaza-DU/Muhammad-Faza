@@ -14,7 +14,7 @@ export const skillsData: SkillCategory[] = [
     skills: ["Python", "C++", "C", "Electronic Assembly"],
   },
   {
-    title: "Shoftware Skills",
+    title: "Software Skills",
     subtitle: "Software skills to design modern web interfaces, develop robust backend systems, and deploy scalable applications.",
     roles: ["Web Developer", "App Developer", "End-to-End Builder"],
     skills: [
@@ -35,4 +35,3 @@ export const skillsData: SkillCategory[] = [
     ],
   },
 ];
-

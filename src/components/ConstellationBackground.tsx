@@ -56,7 +56,7 @@ export default function ConstellationBackground() {
       mouse.y = -9999;
     };
 
-    let running = true;
+    let running = document.visibilityState === "visible";
     const onVisibility = () => {
       running = document.visibilityState === "visible";
       if (!running) cancelAnimationFrame(raf);

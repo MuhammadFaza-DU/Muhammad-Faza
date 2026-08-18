@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import sharp from "sharp";
@@ -12,45 +12,61 @@ const PROFILE_W = 800;
 const BG_W = 1920;
 const LOGO_W = 512;
 
-// 1) Navbar photo: from 374KB PNG shown at 32px
+// Prefer original sources; optimized outputs keep this script rerunnable.
 write(
   "public/assets/images/foto-profil-nav.webp",
-  await sharp(read("public/assets/images/Foto Profil.png"))
-    .resize(NAV_W)
-    .webp({ quality: 80 })
-    .toBuffer()
+  existsSync(resolve(root, "public/assets/images/Foto Profil.png"))
+    ? await sharp(read("public/assets/images/Foto Profil.png"))
+        .resize(NAV_W)
+        .webp({ quality: 80 })
+        .toBuffer()
+    : read("public/assets/images/foto-profil-nav.webp")
 );
 
 // 2) Profile photo (HiringSection / TiltPhoto)
 write(
   "public/assets/images/profile.webp",
-  await sharp(read("public/assets/images/FOTO TERKEREN.webp"))
-    .resize(PROFILE_W, undefined, { withoutEnlargement: true })
-    .webp({ quality: 75 })
-    .toBuffer()
+  existsSync(resolve(root, "public/assets/images/FOTO TERKEREN.webp"))
+    ? await sharp(read("public/assets/images/FOTO TERKEREN.webp"))
+        .resize(PROFILE_W, undefined, { withoutEnlargement: true })
+        .webp({ quality: 75 })
+        .toBuffer()
+    : read("public/assets/images/profile.webp")
 );
 
 // 3) Full-screen fixed background
 write(
   "public/assets/images/bg-statis.webp",
-  await sharp(read("public/assets/images/BG_Statis.webp"))
-    .resize(BG_W, undefined, { withoutEnlargement: true })
-    .webp({ quality: 68 })
-    .toBuffer()
+  existsSync(resolve(root, "public/assets/images/BG_Statis.webp"))
+    ? await sharp(read("public/assets/images/BG_Statis.webp"))
+        .resize(BG_W, undefined, { withoutEnlargement: true })
+        .webp({ quality: 68 })
+        .toBuffer()
+    : read("public/assets/images/bg-statis.webp")
 );
 
 // 4) Intro logo: extract the embedded PNG from the oversize SVG wrapper
-const mfSvg = read("public/assets/icon/icon/mf_fix2.svg").toString("utf-8");
-const match = mfSvg.match(/data:image\/(?:png|jpeg|webp);base64,([A-Za-z0-9+/=]+)/);
-if (!match) throw new Error("mf_fix2.svg: embedded raster not found");
-const logoInner = Buffer.from(match[1], "base64");
+const mfSvgPath = resolve(root, "public/assets/icon/icon/mf_fix2.svg");
+const logoFromSource = existsSync(mfSvgPath);
+const logoInner = logoFromSource
+  ? (() => {
+      const mfSvg = readFileSync(mfSvgPath, "utf-8");
+      const match = mfSvg.match(
+        /data:image\/(?:png|jpeg|webp);base64,([A-Za-z0-9+/=]+)/
+      );
+      if (!match) throw new Error("mf_fix2.svg: embedded raster not found");
+      return Buffer.from(match[1], "base64");
+    })()
+  : read("public/assets/icon/icon/mf-intro.webp");
 
 write(
   "public/assets/icon/icon/mf-intro.webp",
-  await sharp(logoInner)
-    .resize(LOGO_W, undefined, { withoutEnlargement: true })
-    .webp({ quality: 82 })
-    .toBuffer()
+  logoFromSource
+    ? await sharp(logoInner)
+        .resize(LOGO_W, undefined, { withoutEnlargement: true })
+        .webp({ quality: 82 })
+        .toBuffer()
+    : logoInner
 );
 
 const logoRaster = await sharp(logoInner).resize(420).png().toBuffer();
