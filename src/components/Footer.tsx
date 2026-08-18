@@ -33,6 +33,7 @@ export default function Footer() {
               rel="noreferrer"
               aria-label={s.label}
             >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={s.icon} alt="" className="h-5 w-5" />
             </a>
           ))}

@@ -35,6 +35,7 @@ export default function HiringSection() {
           >
             <span className="flex items-center gap-3">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-emerald-400/30 bg-emerald-500/10 text-emerald-200">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/icon/icon/contact.svg" alt="" className="h-5 w-5" />
               </span>
               My Contact

@@ -38,6 +38,7 @@ export default function Intro() {
       <div className="intro-stage">
         <div className="intro-spark" />
         <div className="intro-logo">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/assets/icon/icon/mf-intro.webp" alt="" className="intro-img" />
           <div className="intro-shine" />
         </div>

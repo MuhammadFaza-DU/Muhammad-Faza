@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
 const SOCIAL = [
   {
@@ -69,8 +68,10 @@ export default function ContactPage() {
               >
                 <div className="flex items-start justify-between gap-4">
                   <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-black/35">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={s.icon} alt="" className="h-5 w-5" />
                   </span>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src="/assets/icon/icon/external.svg"
                     alt=""

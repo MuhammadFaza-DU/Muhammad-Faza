@@ -88,6 +88,7 @@ export default function ProjectPage() {
                       <h2 className="mt-2 text-lg font-semibold text-zinc-50">{p.title}</h2>
                     </div>
                     <span className="inline-flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-black/30">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={
                           p.type === "github"

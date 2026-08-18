@@ -97,6 +97,7 @@ export default function TargetCursor({
 
   useEffect(() => {
     if (isMobile || !cursorRef.current) return;
+    const activeStrength = activeStrengthRef.current;
     const originalCursor = document.body.style.cursor;
     if (hideDefaultCursor) document.body.style.cursor = "none";
 
@@ -261,7 +262,7 @@ export default function TargetCursor({
       document.body.style.cursor = originalCursor;
       isActiveRef.current = false;
       targetCornerPositionsRef.current = null;
-      activeStrengthRef.current.current = 0;
+      activeStrength.current = 0;
     };
   }, [targetSelector, spinDuration, moveCursor, constants, hideDefaultCursor, isMobile, hoverDuration, parallaxOn, cursorColor, cursorColorOnTarget]);
 
