@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -76,9 +77,11 @@ export default function Navbar() {
               className="focus-ring cursor-target group flex items-center gap-3 rounded-lg"
             >
               <span className="relative flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg border border-white/12 bg-black/40 transition-colors duration-300 group-hover:border-emerald-400/50">
-                <img
-                  src="/assets/images/Foto%20Profil.png"
+                <Image
+                  src="/assets/images/foto-profil-nav.webp"
                   alt=""
+                  width={32}
+                  height={32}
                   className="h-full w-full object-cover opacity-85 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </span>

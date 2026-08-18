@@ -68,7 +68,7 @@ h3 {
   background-image: radial-gradient(800px 560px at 20% 10%, rgba(16, 185, 129, 0.16), transparent 55%),
     radial-gradient(720px 480px at 85% 22%, rgba(52, 211, 153, 0.12), transparent 55%),
     radial-gradient(540px 420px at 40% 90%, rgba(56, 189, 248, 0.1), transparent 55%),
-    url("/assets/images/BG_Statis.webp");
+    url("/assets/images/bg-statis.webp");
   background-size: cover;
   background-position: center;
   will-change: transform;

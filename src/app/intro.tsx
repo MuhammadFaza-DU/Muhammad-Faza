@@ -38,7 +38,7 @@ export default function Intro() {
       <div className="intro-stage">
         <div className="intro-spark" />
         <div className="intro-logo">
-          <img src="/assets/icon/icon/mf_fix2.svg" alt="" className="intro-img" />
+          <img src="/assets/icon/icon/mf-intro.webp" alt="" className="intro-img" />
           <div className="intro-shine" />
         </div>
       </div>

@@ -57,7 +57,7 @@ export default function HiringSection() {
       <div className="panel rounded-3xl p-7">
         <div className="grid place-items-center">
           <TiltPhoto
-            src="/assets/images/FOTO%20TERKEREN.webp"
+            src="/assets/images/profile.webp"
             alt="Foto profil Muhammad Faza"
             name="Muhammad Faza"
             role="Hardware & Software Engineer"

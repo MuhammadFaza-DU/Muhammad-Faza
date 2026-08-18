@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "motion/react";
 
@@ -63,7 +64,13 @@ export default function TiltPhoto({ src, alt, name, role }: TiltPhotoProps) {
         }
         className="relative h-full w-full cursor-pointer overflow-hidden rounded-3xl border border-emerald-400/30 shadow-2xl shadow-emerald-500/20"
       >
-        <img src={src} alt={alt} className="h-full w-full object-cover" />
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          sizes="(max-width: 640px) 68vw, 384px"
+          className="object-cover"
+        />
 
         {/* Gradient bawah tipis untuk caption area */}
         <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-black/50 via-transparent to-transparent" />
