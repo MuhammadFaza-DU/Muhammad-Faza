@@ -3,7 +3,7 @@ const resumeHtml = `<!doctype html>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resume</title>
+    <title>Resume Muhammad Faza</title>
     <link rel="icon" href="/favicon.svg" />
     <style>
       html,
@@ -23,7 +23,7 @@ const resumeHtml = `<!doctype html>
     </style>
   </head>
   <body>
-    <iframe src="/assets/documents/Resume.pdf" title="Resume"></iframe>
+    <iframe src="/assets/documents/Resume.pdf" title="Resume Muhammad Faza"></iframe>
   </body>
 </html>`;
 
