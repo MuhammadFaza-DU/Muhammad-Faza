@@ -1,16 +1,16 @@
 # Graph Report - muhammad-faza-portfolio  (2026-08-18)
 
 ## Corpus Check
-- 49 files · ~29,602 words
+- 49 files · ~29,194 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 283 nodes · 280 edges · 29 communities (24 shown, 5 thin omitted)
+- 282 nodes · 279 edges · 32 communities (27 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `241e3301`
+- Built from commit: `2d258029`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -36,6 +36,9 @@
 - Global Constraints
 - generate-assets.mjs
 - contact.tsx
+- include
+- Phase 3 — Bug & Stabilization
+- TargetCursor.tsx
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
@@ -56,15 +59,15 @@
 ## Import Cycles
 - None detected.
 
-## Communities (29 total, 5 thin omitted)
+## Communities (32 total, 5 thin omitted)
 
 ### Community 0 - "layout.tsx"
-Cohesion: 0.08
-Nodes (11): blackOpsOne, chelseaMarket, metadata, playfair, Node, SOCIALS, NAV, getContainingBlock() (+3 more)
+Cohesion: 0.09
+Nodes (7): blackOpsOne, chelseaMarket, metadata, playfair, Node, SOCIALS, NAV
 
 ### Community 1 - "compilerOptions"
-Cohesion: 0.07
-Nodes (28): dom, dom.iterable, esnext, **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules (+20 more)
+Cohesion: 0.11
+Nodes (19): dom, dom.iterable, esnext, compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules (+11 more)
 
 ### Community 2 - "home.tsx"
 Cohesion: 0.08
@@ -91,8 +94,8 @@ Cohesion: 0.22
 Nodes (8): name, private, scripts, build, dev, lint, start, version
 
 ### Community 9 - "Design: Performance, SEO & Metadata, Bug Stabilization"
-Cohesion: 0.07
-Nodes (28): 1.1 Intro overlay (LCP blocker, `src/app/intro.tsx`), 1.2 Spline 3D hero (`src/components/HeroSection.tsx`, `src/components/ui/splite.tsx`), 1.3 Optimasi aset (script Node + sharp), 1.4 ConstellationBackground (`src/components/ConstellationBackground.tsx`), 1.5 Konfigurasi build (`next.config.ts`), 1.6 Font, 2.1 Root metadata (`src/app/layout.tsx`), 2.2 Metadata per halaman (+20 more)
+Cohesion: 0.09
+Nodes (21): 1.1 Intro overlay (LCP blocker, `src/app/intro.tsx`), 1.2 Spline 3D hero (`src/components/HeroSection.tsx`, `src/components/ui/splite.tsx`), 1.3 Optimasi aset (script Node + sharp), 1.4 ConstellationBackground (`src/components/ConstellationBackground.tsx`), 1.5 Konfigurasi build (`next.config.ts`), 1.6 Font, 2.1 Root metadata (`src/app/layout.tsx`), 2.2 Metadata per halaman (+13 more)
 
 ### Community 10 - "Global Constraints"
 Cohesion: 0.22
@@ -119,11 +122,23 @@ Cohesion: 0.22
 Nodes (8): Global Constraints, "Living Surface" Polish Implementation Plan, Self-Review, Task 1: ConstellationBackground component + integrasi layout, Task 2: Reveal component + PageTransition refine, Task 3: globals.css component polish (panel, btn, badge), Task 4: Integrasi Reveal ke semua halaman, Task 5: Navbar hide on scroll down
 
 ### Community 24 - "generate-assets.mjs"
+Cohesion: 0.33
+Nodes (3): logoFromSource, mfSvgPath, root
+
+### Community 29 - "include"
+Cohesion: 0.20
+Nodes (9): **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx, exclude (+1 more)
+
+### Community 30 - "Phase 3 — Bug & Stabilization"
 Cohesion: 0.29
-Nodes (4): logoInner, match, mfSvg, root
+Nodes (7): 3.1 Lint warnings (10 → 0), 3.2 Typo, 3.3 Env bersih, 3.4 Keterbacaan teks, 3.5 Error handling, Phase 3 — Bug & Stabilization, Verifikasi Fase 3
+
+### Community 31 - "TargetCursor.tsx"
+Cohesion: 0.60
+Nodes (4): getContainingBlock(), getContainingBlockOffset(), TargetCursor(), TargetCursorProps
 
 ## Knowledge Gaps
-- **152 isolated node(s):** `SOCIAL`, `Filter`, `FILTERS`, `SOCIALS`, `TargetCursorProps` (+147 more)
+- **151 isolated node(s):** `name`, `version`, `private`, `dev`, `build` (+146 more)
   These have ≤1 connection - possible missing edges or undocumented components.
 - **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
@@ -134,13 +149,13 @@ _Questions this graph is uniquely positioned to answer:_
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `package.json`?**
   _High betweenness centrality (0.016) - this node is a cross-community bridge._
-- **What connects `SOCIAL`, `Filter`, `FILTERS` to the rest of the system?**
-  _152 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **Why does `compilerOptions` connect `compilerOptions` to `include`?**
+  _High betweenness centrality (0.008) - this node is a cross-community bridge._
+- **What connects `name`, `version`, `private` to the rest of the system?**
+  _151 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `layout.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.07671957671957672 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08695652173913043 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
-  _Cohesion score 0.06896551724137931 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `home.tsx` be split into smaller, more focused modules?**
   _Cohesion score 0.0766488413547237 - nodes in this community are weakly interconnected._
-- **Should `devDependencies` be split into smaller, more focused modules?**
-  _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._

@@ -1,0 +1,298 @@
+{
+  "communities": {
+    "0": [
+      "src_app_intro",
+      "src_app_intro_intro",
+      "src_app_layout",
+      "src_app_layout_blackopsone",
+      "src_app_layout_chelseamarket",
+      "src_app_layout_metadata",
+      "src_app_layout_playfair",
+      "src_app_layout_rootlayout",
+      "src_components_footer",
+      "src_components_footer_footer",
+      "src_components_footer_socials",
+      "src_components_navbar",
+      "src_components_navbar_iconclose",
+      "src_components_navbar_iconmenu",
+      "src_components_navbar_nav",
+      "src_components_navbar_navbar",
+      "src_components_pagetransition",
+      "src_components_pagetransition_pagetransition",
+      "src_components_parallaxbackground",
+      "src_components_parallaxbackground_parallaxbackground"
+    ],
+    "1": [
+      "ref_dom",
+      "ref_dom_iterable",
+      "ref_esnext",
+      "tsconfig_compileroptions",
+      "tsconfig_compileroptions_allowjs",
+      "tsconfig_compileroptions_esmoduleinterop",
+      "tsconfig_compileroptions_incremental",
+      "tsconfig_compileroptions_isolatedmodules",
+      "tsconfig_compileroptions_jsx",
+      "tsconfig_compileroptions_lib",
+      "tsconfig_compileroptions_module",
+      "tsconfig_compileroptions_moduleresolution",
+      "tsconfig_compileroptions_noemit",
+      "tsconfig_compileroptions_paths",
+      "tsconfig_compileroptions_plugins",
+      "tsconfig_compileroptions_resolvejsonmodule",
+      "tsconfig_compileroptions_skiplibcheck",
+      "tsconfig_compileroptions_strict",
+      "tsconfig_compileroptions_target"
+    ],
+    "2": [
+      "src_app_project_page",
+      "src_app_project_page_page",
+      "src_app_project_project",
+      "src_app_project_project_filter",
+      "src_app_project_project_filters",
+      "src_app_project_project_projectpage",
+      "src_app_skill_page",
+      "src_app_skill_page_page",
+      "src_app_skill_skill",
+      "src_app_skill_skill_skillpage",
+      "src_components_statssection",
+      "src_data_projectsdata",
+      "src_data_projectsdata_project",
+      "src_data_projectsdata_projectlinktype",
+      "src_data_projectsdata_projectsdata",
+      "src_data_skillsdata",
+      "src_data_skillsdata_skillcategory",
+      "src_data_skillsdata_skillsdata"
+    ],
+    "3": [
+      "eslint",
+      "eslint_config_next",
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_config_next",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_postcss",
+      "package_devdependencies_types_node",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_typescript",
+      "tailwindcss",
+      "tailwindcss_postcss",
+      "types_node",
+      "types_react",
+      "types_react_dom",
+      "typescript"
+    ],
+    "4": [
+      "src_app_home",
+      "src_app_home_homepage",
+      "src_app_page",
+      "src_app_page_page",
+      "src_components_herosection",
+      "src_components_herosection_herosection",
+      "src_components_hiringsection",
+      "src_components_hiringsection_hiringsection",
+      "src_components_statssection_statssection",
+      "src_components_tiltphoto",
+      "src_components_tiltphoto_tiltphoto",
+      "src_components_tiltphoto_tiltphotoprops"
+    ],
+    "5": [
+      "gsap",
+      "motion",
+      "next",
+      "package_dependencies",
+      "package_dependencies_gsap",
+      "package_dependencies_motion",
+      "package_dependencies_next",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "react",
+      "react_dom"
+    ],
+    "6": [
+      "ref_mts",
+      "ref_next_dev_types_ts",
+      "ref_next_env_d_ts",
+      "ref_next_types_ts",
+      "ref_node_modules",
+      "ref_ts",
+      "ref_tsx",
+      "tsconfig",
+      "tsconfig_exclude",
+      "tsconfig_include"
+    ],
+    "7": [
+      "src_components_gradualblur",
+      "src_components_gradualblur_curve_functions",
+      "src_components_gradualblur_curvename",
+      "src_components_gradualblur_default_config",
+      "src_components_gradualblur_getgradientdirection",
+      "src_components_gradualblur_gradualblur",
+      "src_components_gradualblur_gradualblurprops",
+      "src_components_gradualblur_position",
+      "src_components_gradualblur_presetconfig",
+      "src_components_gradualblur_presets"
+    ],
+    "8": [
+      "package",
+      "package_name",
+      "package_private",
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_start",
+      "package_version"
+    ],
+    "9": [
+      "src_app_contact_contact",
+      "src_app_contact_contact_contactpage",
+      "src_app_contact_contact_social",
+      "src_app_contact_page",
+      "src_app_contact_page_page"
+    ],
+    "10": [
+      "src_components_targetcursor",
+      "src_components_targetcursor_getcontainingblock",
+      "src_components_targetcursor_getcontainingblockoffset",
+      "src_components_targetcursor_targetcursor",
+      "src_components_targetcursor_targetcursorprops"
+    ],
+    "11": [
+      "eslint_config",
+      "eslint_config_eslintconfig"
+    ],
+    "12": [
+      "next_config",
+      "next_config_nextconfig"
+    ],
+    "13": [
+      "postcss_config",
+      "postcss_config_config"
+    ],
+    "14": [
+      "src_app_resume_route",
+      "src_app_resume_route_get"
+    ],
+    "15": [
+      "src_components_glitchoverlay",
+      "src_components_glitchoverlay_glitchoverlay"
+    ],
+    "16": [
+      "graphify_wrapper"
+    ],
+    "17": [
+      "tailwind_config"
+    ]
+  },
+  "cohesion": {
+    "0": 0.13157894736842105,
+    "1": 0.10526315789473684,
+    "2": 0.1568627450980392,
+    "3": 0.11764705882352941,
+    "4": 0.22727272727272727,
+    "5": 0.18181818181818182,
+    "6": 0.2,
+    "7": 0.2222222222222222,
+    "8": 0.2222222222222222,
+    "9": 0.5,
+    "10": 0.6,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0,
+    "16": 1.0,
+    "17": 1.0
+  },
+  "gods": [
+    {
+      "id": "tsconfig_compileroptions",
+      "label": "compilerOptions",
+      "degree": 16
+    },
+    {
+      "id": "tsconfig_include",
+      "label": "include",
+      "degree": 7
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "src_components_targetcursor_targetcursor",
+      "label": "TargetCursor()",
+      "degree": 4
+    },
+    {
+      "id": "tsconfig_compileroptions_lib",
+      "label": "lib",
+      "degree": 4
+    },
+    {
+      "id": "src_components_gradualblur_gradualblur",
+      "label": "GradualBlur()",
+      "degree": 3
+    },
+    {
+      "id": "src_components_navbar_navbar",
+      "label": "Navbar()",
+      "degree": 3
+    },
+    {
+      "id": "src_data_projectsdata_projectsdata",
+      "label": "projectsData",
+      "degree": 3
+    },
+    {
+      "id": "src_data_skillsdata_skillsdata",
+      "label": "skillsData",
+      "degree": 3
+    },
+    {
+      "id": "package_dependencies_gsap",
+      "label": "gsap",
+      "degree": 2
+    }
+  ],
+  "surprises": [],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `devDependencies` connect `devDependencies` to `package.json`?",
+      "why": "High betweenness centrality (0.040) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `compilerOptions` connect `compilerOptions` to `include`?",
+      "why": "High betweenness centrality (0.030) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `dependencies` connect `dependencies` to `package.json`?",
+      "why": "High betweenness centrality (0.028) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?",
+      "why": "66 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `layout.tsx` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13157894736842105 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `compilerOptions` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `devDependencies` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.11764705882352941 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

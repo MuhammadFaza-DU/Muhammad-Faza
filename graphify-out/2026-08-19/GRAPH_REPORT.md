@@ -1,11 +1,11 @@
-# Graph Report - muhammad-faza-portfolio  (2026-08-19)
+# Graph Report - muhammad-faza-portfolio  (2026-08-18)
 
 ## Corpus Check
-- 51 files · ~29,769 words
+- 49 files · ~28,897 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 292 nodes · 299 edges · 34 communities (30 shown, 4 thin omitted)
+- 279 nodes · 275 edges · 32 communities (27 shown, 5 thin omitted)
 - Extraction: 99% EXTRACTED · 1% INFERRED · 0% AMBIGUOUS · INFERRED: 3 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
 
@@ -35,22 +35,20 @@
 - Design: "Living Surface" — Polish UI/UX
 - Global Constraints
 - generate-assets.mjs
-- project.tsx
+- contact.tsx
 - include
 - Project Card Editorial Rail Design
-- Global Constraints
-- Resume, Favicon, and Browser Title Revision
 - Global Constraints
 
 ## God Nodes (most connected - your core abstractions)
 1. `compilerOptions` - 16 edges
 2. `Global Constraints` - 14 edges
-3. `Design: "Living Surface" — Polish UI/UX` - 9 edges
-4. `Design: Performance, SEO & Metadata, Bug Stabilization` - 9 edges
+3. `Design: Performance, SEO & Metadata, Bug Stabilization` - 9 edges
+4. `Design: "Living Surface" — Polish UI/UX` - 9 edges
 5. `Phase 1 — Performance` - 8 edges
-6. `include` - 7 edges
-7. `Phase 2 — SEO & Metadata` - 7 edges
-8. `Phase 3 — Bug & Stabilization` - 7 edges
+6. `Phase 2 — SEO & Metadata` - 7 edges
+7. `Phase 3 — Bug & Stabilization` - 7 edges
+8. `include` - 7 edges
 9. `Design: Spline 3D Robot di HeroSection` - 7 edges
 10. `Global Constraints` - 6 edges
 
@@ -61,19 +59,19 @@
 ## Import Cycles
 - None detected.
 
-## Communities (34 total, 4 thin omitted)
+## Communities (32 total, 5 thin omitted)
 
 ### Community 0 - "layout.tsx"
-Cohesion: 0.10
-Nodes (16): blackOpsOne, chelseaMarket, metadata, playfair, ConstellationBackground(), Node, Footer(), SOCIALS (+8 more)
+Cohesion: 0.09
+Nodes (12): blackOpsOne, chelseaMarket, metadata, playfair, Node, SOCIALS, NAV, PageTransition() (+4 more)
 
 ### Community 1 - "compilerOptions"
 Cohesion: 0.11
 Nodes (19): dom, dom.iterable, esnext, compilerOptions, allowJs, esModuleInterop, incremental, isolatedModules (+11 more)
 
 ### Community 2 - "home.tsx"
-Cohesion: 0.10
-Nodes (15): ContactPage(), SOCIAL, metadata, HomePage(), metadata, metadata, SkillPage(), HiringSection() (+7 more)
+Cohesion: 0.08
+Nodes (15): metadata, metadata, Filter, FILTERS, metadata, HiringSection(), Reveal(), RevealProps (+7 more)
 
 ### Community 3 - "devDependencies"
 Cohesion: 0.11
@@ -127,10 +125,6 @@ Nodes (8): Global Constraints, "Living Surface" Polish Implementation Plan, Self
 Cohesion: 0.33
 Nodes (3): logoFromSource, mfSvgPath, root
 
-### Community 28 - "project.tsx"
-Cohesion: 0.24
-Nodes (7): metadata, Filter, FILTERS, ProjectPage(), Project, ProjectLinkType, projectsData
-
 ### Community 29 - "include"
 Cohesion: 0.20
 Nodes (9): **/*.mts, .next/dev/types/**/*.ts, next-env.d.ts, .next/types/**/*.ts, node_modules, **/*.ts, **/*.tsx, exclude (+1 more)
@@ -143,33 +137,25 @@ Nodes (4): Behavior, Direction, Project Card Editorial Rail Design, Visual Rules
 Cohesion: 0.50
 Nodes (3): Global Constraints, Project Card Editorial Rail Implementation Plan, Task 1: Editorial Rail Project Cards
 
-### Community 32 - "Resume, Favicon, and Browser Title Revision"
-Cohesion: 0.29
-Nodes (6): Goal, Implementation, Out Of Scope, Resume, Favicon, and Browser Title Revision, Scope, Verification
-
-### Community 33 - "Global Constraints"
-Cohesion: 0.33
-Nodes (5): Global Constraints, Resume, Favicon, and Browser Title Revision Implementation Plan, Task 1: Replace the Published Resume Asset, Task 2: Update Resume Viewer Titles, Task 3: Run Project Verification
-
 ## Knowledge Gaps
-- **155 isolated node(s):** `eslintConfig`, `nextConfig`, `name`, `version`, `private` (+150 more)
+- **148 isolated node(s):** `Task 1: Editorial Rail Project Cards`, `Direction`, `Behavior`, `Visual Rules`, `blackOpsOne` (+143 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **4 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **5 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `dependencies` connect `dependencies` to `package.json`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `devDependencies` connect `devDependencies` to `package.json`?**
-  _High betweenness centrality (0.015) - this node is a cross-community bridge._
+  _High betweenness centrality (0.017) - this node is a cross-community bridge._
 - **Why does `compilerOptions` connect `compilerOptions` to `include`?**
   _High betweenness centrality (0.008) - this node is a cross-community bridge._
-- **What connects `eslintConfig`, `nextConfig`, `name` to the rest of the system?**
-  _155 weakly-connected nodes found - possible documentation gaps or missing edges._
+- **What connects `Task 1: Editorial Rail Project Cards`, `Direction`, `Behavior` to the rest of the system?**
+  _148 weakly-connected nodes found - possible documentation gaps or missing edges._
 - **Should `layout.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.10461538461538461 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.08615384615384615 - nodes in this community are weakly interconnected._
 - **Should `compilerOptions` be split into smaller, more focused modules?**
   _Cohesion score 0.10526315789473684 - nodes in this community are weakly interconnected._
 - **Should `home.tsx` be split into smaller, more focused modules?**
-  _Cohesion score 0.09852216748768473 - nodes in this community are weakly interconnected._
+  _Cohesion score 0.0784313725490196 - nodes in this community are weakly interconnected._
