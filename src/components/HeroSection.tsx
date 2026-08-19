@@ -80,7 +80,7 @@ export default function HeroSection() {
 
         <div className="mt-8 grid gap-3 sm:grid-cols-2">
           <a
-            href="/assets/documents/Resume.pdf"
+            href="/resume"
             target="_blank"
             rel="noreferrer"
             className="btn btn-primary focus-ring cursor-target inline-flex items-center justify-between rounded-2xl px-5 py-4 text-sm font-medium text-emerald-100"
