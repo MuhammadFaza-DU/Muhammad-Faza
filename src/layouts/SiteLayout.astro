@@ -11,12 +11,14 @@ import "../styles/motion.css";
 import "../styles/opening.css";
 import OpeningScreen from "../components/shell/OpeningScreen.astro";
 import openingBootstrap from "../client/opening-bootstrap.js?raw";
+import { identityGraph, jsonLd, seoForPath } from "../lib/seo";
 const { locale, title, description, page = "home", slug } = Astro.props as {
   locale: Locale; title: string; description: string; page?: PageKind; slug?: string;
 };
 const t = copy[locale];
 const pathname = Astro.url.pathname;
 const origin = Astro.site;
+const seo = seoForPath(pathname);
 ---
 <!doctype html>
 <html lang={locale} data-page-kind={page} transition:animate="none">
@@ -27,7 +29,14 @@ const origin = Astro.site;
     <meta name="theme-color" content="#FFFFFF" />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={new URL(pathname, origin)} />
+    <link rel="canonical" href={new URL(seo.canonicalPath, origin)} />
+    {Object.entries(seo.alternates).map(([language, path]) => (
+      <link rel="alternate" hreflang={language} href={new URL(path, origin)} />
+    ))}
+    {!seo.indexable && <meta name="robots" content="noindex, follow" />}
+    {page === "home" && seo.indexable && (
+      <script type="application/ld+json" is:inline set:html={jsonLd(identityGraph(new URL("/", origin).origin))} />
+    )}
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />

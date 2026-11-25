@@ -24,7 +24,7 @@ test("built routes identify the new production domain as their canonical origin"
     assert.equal(url.origin, site, path);
     const route = relative("dist", path).replaceAll("\\", "/").replace(/index\.html$/, "");
     // Astro writes 404.html while the source page's pathname remains /404/.
-    assert.equal(url.pathname, route === "404.html" ? "/404/" : `/${route}`, path);
+    assert.equal(url.pathname, route === "404.html" ? "/404/" : route === "" ? "/en/" : `/${route}`, path);
   }
 });
 
