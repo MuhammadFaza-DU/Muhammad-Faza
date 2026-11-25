@@ -1,0 +1,191 @@
+[
+  {
+    "id": "tazk",
+    "view": "catalog",
+    "sourcePath": "assets/masters/project-screens/tazk-home.webp",
+    "sourceUrl": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/home.webp",
+    "sourceRef": "Repository app screenshot pinned to f7d2997; not recaptured on a local device",
+    "sourceSha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628",
+    "kind": "screenshot",
+    "fit": "contain",
+    "background": "#f4f2e8",
+    "sources": [
+      {
+        "path": "assets/masters/project-screens/tazk-home.webp",
+        "sha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628",
+        "url": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/home.webp"
+      },
+      {
+        "path": "assets/masters/project-screens/tazk-pomodoro.webp",
+        "sha256": "056db294a428aee2417ee483042bf351378dae5916427382c3f36daeb59f60d5",
+        "url": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/pomodoro.webp"
+      },
+      {
+        "path": "assets/masters/project-screens/tazk-stats.webp",
+        "sha256": "c7b218cdc34daf719684ef683e0b8fe1c0f35d4ea99efdc814335bcd2b2274b3",
+        "url": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/stats.webp"
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/projects/tazk/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/tazk-home.webp",
+        "sourceSha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628",
+        "sourcePaths": [
+          "assets/masters/project-screens/tazk-home.webp",
+          "assets/masters/project-screens/tazk-pomodoro.webp",
+          "assets/masters/project-screens/tazk-stats.webp"
+        ],
+        "screenFrames": [
+          {
+            "path": "assets/masters/project-screens/tazk-home.webp",
+            "left": 137,
+            "top": 12,
+            "width": 426,
+            "height": 876
+          },
+          {
+            "path": "assets/masters/project-screens/tazk-pomodoro.webp",
+            "left": 587,
+            "top": 12,
+            "width": 426,
+            "height": 876
+          },
+          {
+            "path": "assets/masters/project-screens/tazk-stats.webp",
+            "left": 1037,
+            "top": 12,
+            "width": 426,
+            "height": 876
+          }
+        ],
+        "composition": "Three complete actual screens, aspect ratios preserved; mobile uses the Home screen"
+      },
+      {
+        "path": "media/projects/tazk/featured-catalog-tall.webp",
+        "width": 460,
+        "height": 946,
+        "sourcePath": "assets/masters/project-screens/tazk-home.webp",
+        "sourceSha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628"
+      }
+    ]
+  },
+  {
+    "id": "gamein",
+    "view": "catalog",
+    "sourcePath": "assets/masters/project-screens/gamein-catalog-wide.png",
+    "sourceUrl": "https://gamein-8cq.pages.dev/id/katalog/",
+    "sourceRef": "Live public catalog captured 2026-11-15, desktop 1600x900 and independently rendered narrow 600x1100; no UI fabrication",
+    "sourceSha256": "c50ba56dfb793cb94a2a4a050ea6e6085d80ac76bbe99a9ce2b226d9a0528e32",
+    "kind": "screenshot",
+    "fit": "cover",
+    "background": "#0b120d",
+    "outputs": [
+      {
+        "path": "media/projects/gamein/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/gamein-catalog-wide.png",
+        "sourceSha256": "c50ba56dfb793cb94a2a4a050ea6e6085d80ac76bbe99a9ce2b226d9a0528e32"
+      },
+      {
+        "path": "media/projects/gamein/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/project-screens/gamein-catalog-tall.png",
+        "sourceSha256": "af5e363f94ffc3d48107683598e65aca4320c3555e7904eed934d2c7c1ee9dd0"
+      }
+    ]
+  },
+  {
+    "id": "stackcrate",
+    "view": "catalog",
+    "sourcePath": "assets/masters/project-screens/stackcrate-catalog-wide.png",
+    "sourceUrl": "https://stack-crate.vercel.app/",
+    "sourceRef": "Live public asset grid captured 2026-11-15, desktop 1600x900 and independently rendered narrow 600x1100; public browsing only",
+    "sourceSha256": "b8f4b7b8cdbca05c8ff7f279414eacfa3d5e06a34fd22314c83302d93770bead",
+    "kind": "screenshot",
+    "fit": "cover",
+    "background": "#211b16",
+    "outputs": [
+      {
+        "path": "media/projects/stackcrate/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/stackcrate-catalog-wide.png",
+        "sourceSha256": "b8f4b7b8cdbca05c8ff7f279414eacfa3d5e06a34fd22314c83302d93770bead"
+      },
+      {
+        "path": "media/projects/stackcrate/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/project-screens/stackcrate-catalog-tall.png",
+        "sourceSha256": "73b7db892c266e0c4a3455976cf831824778d4c1c31896278028533745cb9903"
+      }
+    ]
+  },
+  {
+    "id": "capify",
+    "view": "catalog",
+    "sourcePath": "assets/masters/project-screens/capify-featured-wide.png",
+    "sourceUrl": "https://capify-v1-demo.vercel.app/",
+    "sourceRef": "Genuine public interface captured 2026-11-16 at 1600x900 and independently at 600x1100; demo frontend only",
+    "sourceSha256": "414735908dbe06e80d7175134277b4c7e72471fb7675d19f608cab680db9374a",
+    "kind": "screenshot",
+    "fit": "cover",
+    "background": "#09090b",
+    "outputs": [
+      {
+        "path": "media/projects/capify/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/capify-featured-wide.png",
+        "sourceSha256": "414735908dbe06e80d7175134277b4c7e72471fb7675d19f608cab680db9374a"
+      },
+      {
+        "path": "media/projects/capify/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/project-screens/capify-featured-tall.png",
+        "sourceSha256": "ef913ca4ac8ffd92687fe899df54e3486cb28851fddf97b2553fdf43842ec70a"
+      }
+    ],
+    "homeOnly": true
+  },
+  {
+    "id": "mariokan",
+    "view": "architecture",
+    "sourcePath": "assets/masters/catalog/mariokan.png",
+    "sourceUrl": "https://github.com/MuhammadFaza-DU/MarioKan/tree/d584d7e876cf2b4025b281f05427e114c2f6abe7",
+    "sourceRef": "Original repository architecture diagram; full diagram wide and central controller/player/collision excerpt tall; design, not finished hardware",
+    "sourceSha256": "5cc47969a51b2a81e5434d4c1c2c123cc7d21c9f7140d2c7e4975c9affae37e2",
+    "kind": "architecture",
+    "fit": "contain",
+    "background": "#ffffff",
+    "outputs": [
+      {
+        "path": "media/projects/mariokan/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/catalog/mariokan.png",
+        "sourceSha256": "5cc47969a51b2a81e5434d4c1c2c123cc7d21c9f7140d2c7e4975c9affae37e2"
+      },
+      {
+        "path": "media/projects/mariokan/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/catalog/mariokan.png",
+        "sourceSha256": "5cc47969a51b2a81e5434d4c1c2c123cc7d21c9f7140d2c7e4975c9affae37e2",
+        "excerpt": {
+          "left": 1100,
+          "top": 440,
+          "width": 1400,
+          "height": 1450
+        }
+      }
+    ],
+    "homeOnly": true
+  }
+]

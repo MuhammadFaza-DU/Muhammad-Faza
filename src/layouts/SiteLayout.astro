@@ -1,0 +1,73 @@
+---
+import type { Locale, PageKind } from "../data/types";
+import { ClientRouter } from "astro:transitions";
+import { copy } from "../i18n";
+import Header from "../components/shell/Header.astro";
+import Footer from "../components/shell/Footer.astro";
+import "../styles/tokens.css";
+import "../styles/base.css";
+import "../styles/shell.css";
+import "../styles/motion.css";
+import "../styles/opening.css";
+import OpeningScreen from "../components/shell/OpeningScreen.astro";
+import openingBootstrap from "../client/opening-bootstrap.js?raw";
+const { locale, title, description, page = "home", slug } = Astro.props as {
+  locale: Locale; title: string; description: string; page?: PageKind; slug?: string;
+};
+const t = copy[locale];
+const pathname = Astro.url.pathname;
+const origin = Astro.site;
+---
+<!doctype html>
+<html lang={locale} data-page-kind={page} transition:animate="none">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#FFFFFF" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(pathname, origin)} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" href="/fonts/archivo.woff2" as="font" type="font/woff2" crossorigin />
+    <ClientRouter fallback="swap" />
+    <script is:inline>
+      document.documentElement.dataset.motionEnabled="true";
+      window.setTimeout(()=>{
+        if(!document.documentElement.dataset.motionInitialized)delete document.documentElement.dataset.motionEnabled;
+      },6000);
+      if (!document.documentElement.dataset.theme) {
+        let theme = "light";
+        try { if (localStorage.getItem("faza-theme") === "dark") theme = "dark"; } catch { theme = "light"; }
+        document.documentElement.dataset.theme = theme;
+      }
+    </script>
+    <script is:inline set:html={openingBootstrap} />
+    <style is:global>
+      html[data-opening="pending"] .page-main,
+      html[data-opening="pending"] .site-header,
+      html[data-opening="pending"] .site-footer,
+      html[data-opening="failed"] .page-main,
+      html[data-opening="failed"] .site-header,
+      html[data-opening="failed"] .site-footer { visibility: hidden; }
+      html[data-home-entry="pending"] #intro,
+      html[data-home-entry="failed"] #intro { visibility: hidden; }
+    </style>
+  </head>
+  <body data-page={page}>
+    {page==="home"&&<OpeningScreen locale={locale}/>}
+    <a class="skip-link" href="#main">{t.common.skip}</a>
+    <Header locale={locale} page={page} slug={slug} />
+    <div class="action-sheen" aria-hidden="true" transition:persist="action-sheen"></div>
+    <main id="main" class="page-main"><slot /></main>
+    <Footer locale={locale} />
+    <script>
+      import "../client/preferences";
+      import "../client/header";
+      import "../client/motion";
+      import "../client/control-motion";
+      import "../client/route-motion";
+    </script>
+  </body>
+</html>

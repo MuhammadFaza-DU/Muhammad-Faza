@@ -1,0 +1,13 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+const { target } = Astro.props as { target: "project" | "contact" | "skill" };
+const suffix = target === "project" ? "project/" : target === "contact" ? "contact/" : "#skills";
+---
+<SiteLayout locale="en" title="Muhammad Faza" description="Continue to Muhammad Faza's portfolio." page="home">
+  <section class="container" data-entry-target={target}>
+    <h1>Muhammad Faza</h1>
+    <a class="text-link" href={`/en/${suffix}`}>Continue in English</a>
+    <a class="text-link" href={`/id/${suffix}`}>Lanjut dalam Bahasa Indonesia</a>
+  </section>
+  <script>import "../../client/entry";</script>
+</SiteLayout>

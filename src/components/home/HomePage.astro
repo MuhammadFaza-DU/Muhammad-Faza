@@ -1,0 +1,23 @@
+---
+import type { Locale } from "../../data/types";
+import { copy } from "../../i18n";
+import { tools, technologies } from "../../data/skills";
+import Intro from "./Intro.astro";
+import PortfolioStats from "./PortfolioStats.astro";
+import SkillShowcase from "./SkillShowcase";
+import FeaturedWork from "./FeaturedWork.astro";
+import Hiring from "./Hiring.astro";
+import "../../styles/home.css";
+import "../../styles/showcase.css";
+import "../../styles/work.css";
+const { locale } = Astro.props as { locale: Locale };
+const t = copy[locale];
+---
+<Intro locale={locale} />
+<PortfolioStats locale={locale} />
+<section id="skills" class="skills-section container" aria-labelledby="skills-title">
+  <h2 id="skills-title" class="sr-only">{t.skills.title}</h2>
+  <SkillShowcase locale={locale} tools={tools} technologies={technologies} client:visible />
+</section>
+<FeaturedWork locale={locale} />
+<Hiring locale={locale} />

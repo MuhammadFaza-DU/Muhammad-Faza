@@ -1,0 +1,28 @@
+---
+import type {Locale} from "../../data/types";
+import {projects} from "../../data/projects";
+import {technologies} from "../../data/skills";
+import {portfolioStartYear} from "../../data/stats";
+import {getPortfolioStats} from "../../lib/stats";
+import {copy} from "../../i18n";
+const {locale}=Astro.props as {locale:Locale};
+const t=copy[locale].stats;
+const stats=getPortfolioStats(projects,technologies,new Date().getFullYear());
+---
+<aside class="portfolio-stats container" aria-label={t.label} data-motion-anchor data-motion-scroll>
+  <dl class="stats-list" data-motion-layer>
+    <div>
+      <dt>{t.projects}</dt>
+      <dd><data value={stats.projectCount} data-stats-projects>{stats.projectCount}</data></dd>
+    </div>
+    <div>
+      <dt>{t.years}<span class="sr-only"> ({t.since} {portfolioStartYear})</span></dt>
+      <dd><data value={stats.yearsActive} data-stats-years data-start-year={portfolioStartYear}>{stats.yearsActive}</data></dd>
+    </div>
+    <div>
+      <dt>{t.technologies}</dt>
+      <dd><data value={stats.technologyCount} data-stats-technologies>{stats.technologyCount}</data></dd>
+    </div>
+  </dl>
+</aside>
+<script>import "../../client/stats";</script>

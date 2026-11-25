@@ -1,0 +1,58 @@
+---
+import type { Locale } from "../../data/types";
+import { copy } from "../../i18n";
+import { projects } from "../../data/projects";
+import { featuredProjectIds } from "../../data/featured";
+import featuredMedia from "../../../docs/v2/assets/featured-media.json";
+const { locale } = Astro.props as {locale: Locale};
+const t = copy[locale];
+const featured = featuredProjectIds.map(id => projects.find(project => project.id === id)!);
+const media = {
+  tazk: {label: locale === "id" ? "Screenshot antarmuka Tazk dari dokumentasi aplikasi." : "Tazk interface screenshots from the app documentation."},
+  gamein: {label: locale === "id" ? "Screenshot katalog GameIn dari situs yang berjalan." : "Screenshot of the running GameIn catalog."},
+  stackcrate: {label: locale === "id" ? "Screenshot StackCrate dari situs yang berjalan." : "Screenshot of the running StackCrate website."},
+  capify: {label: locale === "id" ? "Antarmuka demo Capify dari situs publik. Backend offline saat pemeriksaan." : "The public Capify demo interface. The backend was offline when inspected."},
+  mariokan: {label: locale === "id" ? "Diagram arsitektur asli MarioKan; rancangan FPGA, bukan gameplay yang sudah selesai." : "MarioKan's original architecture diagram; an FPGA design, not completed gameplay."},
+};
+---
+<section id="work" class="container work-section" aria-labelledby="work-title">
+  <div class="work-heading section-heading">
+    <h2 id="work-title" data-motion-scroll>{t.work.title}</h2>
+  </div>
+  <div class="featured-stack" data-stack="flow" style={`--featured-extra-count:${Math.max(0,featured.length-3)}`}>
+    {featured.map((project,index) => {
+      const content = project.content[locale];
+      const image = media[project.id as keyof typeof media];
+      const artwork = featuredMedia.find(item=>item.id===project.id)!;
+      const [wide,tall]=artwork.outputs;
+      return <>
+        {index > 0 && <div class="stack-spacer" aria-hidden="true"></div>}
+        <div class="stack-slot" style={`--stack-index:${index};--stack-order:${index + 1}`}>
+          <article class="featured-card" aria-labelledby={`featured-${project.id}`}>
+            <figure class={`featured-media media-${project.id}`}>
+              <div class="featured-image">
+                <picture>
+                  <source media="(max-width: 47.99rem)" srcset={`/${tall.path}`} width={tall.width} height={tall.height}/>
+                  <img src={`/${wide.path}`} width={wide.width} height={wide.height}
+                    alt={image.label} loading="lazy" decoding="async" />
+                </picture>
+                <p class="media-failure" hidden>{t.work.mediaUnavailable}</p>
+              </div>
+              <figcaption class="sr-only">{image.label}</figcaption>
+            </figure>
+            <div class="featured-info">
+              <div>
+                <h3 id={`featured-${project.id}`}>{content.title}</h3>
+                <p>{content.summary}</p>
+                <p class="featured-status">{content.status}</p>
+              </div>
+              <a class="button" href={`/${locale}/project/${project.slug}/`} aria-label={`${t.actions.detail}: ${content.title}`}>{t.actions.detail}</a>
+            </div>
+            <span class="stack-shade" aria-hidden="true"></span>
+          </article>
+        </div>
+      </>;
+    })}
+  </div>
+</section>
+<script>import "../../client/stack";</script>

@@ -1,0 +1,473 @@
+[
+  {
+    "id": "tazk",
+    "alt": {
+      "id": "Tiga layar aplikasi Tazk: tugas, timer fokus, dan statistik.",
+      "en": "Three Tazk app screens: tasks, focus timer, and statistics."
+    },
+    "recipe": {
+      "kind": "screens",
+      "background": "#f4f2e8"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/project-screens/tazk-home.webp",
+        "reference": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/home.webp",
+        "state": "Repository screenshot, not a new device capture",
+        "sha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628",
+        "width": 460,
+        "height": 946
+      },
+      {
+        "path": "assets/masters/project-screens/tazk-pomodoro.webp",
+        "reference": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/pomodoro.webp",
+        "state": "Repository screenshot, not a new device capture",
+        "sha256": "056db294a428aee2417ee483042bf351378dae5916427382c3f36daeb59f60d5",
+        "width": 460,
+        "height": 946
+      },
+      {
+        "path": "assets/masters/project-screens/tazk-stats.webp",
+        "reference": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/stats.webp",
+        "state": "Repository screenshot, not a new device capture",
+        "sha256": "c7b218cdc34daf719684ef683e0b8fe1c0f35d4ea99efdc814335bcd2b2274b3",
+        "width": 460,
+        "height": 946
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/tazk-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "33da7a03dc05afde8a237fb3b93f6d9ffa72050e53ea8d05d56d4f0236df2f03"
+      },
+      {
+        "path": "media/catalog/tazk-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "bd8d3f85baf2bf56f43cd8edcf88f67834ece7b433eaf46b14a55a66535f93fd"
+      },
+      {
+        "path": "media/catalog/tazk-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "73ef0a112d8661653656b01455c10da2fba38891958f947c39a5cbac9d55fa68"
+      }
+    ]
+  },
+  {
+    "id": "gamein",
+    "alt": {
+      "id": "Katalog GameIn dengan pencarian, filter, dan daftar game asli.",
+      "en": "GameIn catalog with search, filters, and its actual game listing."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#0a100c"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/gamein-catalog.png",
+        "reference": "https://gamein-8cq.pages.dev/id/katalog/",
+        "state": "Public catalog, 1280x800, scroll0, fonts and visible images ready, 2026-11-15",
+        "sha256": "45719514523e92f9da0f155d9411995ca95f0a24bd74fdc94136a7ba9f8b9fee",
+        "width": 1280,
+        "height": 800
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/gamein-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "f52791345bf97065d9416c8acba8f21455b7fdd6fba5072b28068c6cf5b6c1ec"
+      },
+      {
+        "path": "media/catalog/gamein-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "6d0e256efcd1a96de848f969214dd23bff53c4f528f40b610b6a6996bf799930"
+      },
+      {
+        "path": "media/catalog/gamein-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "f22c4a7567f8daccaa42a3e73656e6f70009e671dd86df473ec506e61c65ad08"
+      }
+    ]
+  },
+  {
+    "id": "stackcrate",
+    "alt": {
+      "id": "Penjelajahan aset StackCrate dengan filter kategori dan kartu audio/video.",
+      "en": "StackCrate asset browsing with category filters and audio/video cards."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#211b16"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/stackcrate-catalog.png",
+        "reference": "https://stack-crate.vercel.app/",
+        "state": "Public asset catalog, 1280x800, scroll1170, no authenticated actions, 2026-11-15",
+        "sha256": "9327c67b097620df4f3ffee7283b285635f4b321553d248a6f1890d06bf55e36",
+        "width": 1280,
+        "height": 800
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/stackcrate-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "df847d553fd2e43f738ef385c9dee0537c332eb209d0922cc228c3ce2ea3df43"
+      },
+      {
+        "path": "media/catalog/stackcrate-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "7b071e37059156dea26a5e9bd7f336d87836a34d78b7fea89fbdd3c9b7c4d84c"
+      },
+      {
+        "path": "media/catalog/stackcrate-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "fe44ba3078f3f8f18ac5da2561c755adfcfcefb322f04cbe03066f6ce071e3be"
+      }
+    ]
+  },
+  {
+    "id": "capify",
+    "alt": {
+      "id": "Halaman publik Capify untuk alur subtitle video, bukan hasil render yang sudah diuji.",
+      "en": "Capify public video-subtitle landing page, not a verified render result."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#090909"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/capify.png",
+        "reference": "https://capify-v1-demo.vercel.app/",
+        "state": "Public landing, 1280x800, scroll0. Studio reported backend offline; no upload/export tested. 2026-11-15",
+        "sha256": "dc1a999ce114a869939234b2995f2ba8c588ac4e92797fc927558c3e054172a1",
+        "width": 1280,
+        "height": 800
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/capify-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "5b297a74b4bee33fa6fd8037c9890307e34cf3c4a99a938a0ccef3a3a54917eb"
+      },
+      {
+        "path": "media/catalog/capify-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "13f877583feb9901099497290c5c95b376df09adf430417c0be7c7b333ad2cc7"
+      },
+      {
+        "path": "media/catalog/capify-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "982c5b0d2c10c0ce969860ac5d244efe22565f33070b6d22505b2f8fe68a156b"
+      }
+    ]
+  },
+  {
+    "id": "mariokan",
+    "alt": {
+      "id": "Diagram arsitektur MarioKan untuk FPGA Basys 3, bukti rancangan bukan hardware selesai.",
+      "en": "MarioKan FPGA Basys 3 architecture diagram, design evidence rather than completed hardware."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#ffffff"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/mariokan.png",
+        "reference": "https://raw.githubusercontent.com/MuhammadFaza-DU/MarioKan/d584d7e876cf2b4025b281f05427e114c2f6abe7/docs/diagram/arsitektur.png",
+        "state": "Actual approved functional diagram from pinned repo, 2026-11-15",
+        "sha256": "5cc47969a51b2a81e5434d4c1c2c123cc7d21c9f7140d2c7e4975c9affae37e2",
+        "width": 3456,
+        "height": 2283
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/mariokan-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "8b06835b55471d4f2205dbae82c92d2797a2027f2bc07129b1fa7172ba9db6ff"
+      },
+      {
+        "path": "media/catalog/mariokan-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "0dfb803619a5f78a2e66fd647a6c9c0acab8aa217839b9d233b78d3759d2dfc3"
+      },
+      {
+        "path": "media/catalog/mariokan-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "9ec44e11401417ae9be8192b46ed538b69008a0b57ff576880e3ae5bb75bd4ca"
+      }
+    ]
+  },
+  {
+    "id": "brawl-buddies",
+    "alt": {
+      "id": "Menu utama prototype Brawl Buddies: Chaos Kitchen dari situs berjalan.",
+      "en": "Brawl Buddies: Chaos Kitchen prototype main menu from the running site."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#33202a"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/brawl-buddies.png",
+        "reference": "https://game-chef-pixel.pages.dev/",
+        "state": "Actual public prototype menu, 1280x800, scroll0; no gameplay/authorship claim, 2026-11-15",
+        "sha256": "e189a87c0e729ab473e1d56539b4c2dd82bf1373fc502acf4375a462ea089a75",
+        "width": 1280,
+        "height": 800
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/brawl-buddies-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "ff3a57edccf20b4b821c46d723b4aaae93cb6a975b84075a3012d40c5fa18119"
+      },
+      {
+        "path": "media/catalog/brawl-buddies-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "87755b62a807879f7b4077f6665956a27864040defce2e90a791053dc6f082dd"
+      },
+      {
+        "path": "media/catalog/brawl-buddies-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "74edc7703c3287a5879119f5a6d2766f752c661105dca0ab9c902fa246fbc51d"
+      }
+    ]
+  },
+  {
+    "id": "mini-notepad",
+    "alt": {
+      "id": "Output CLI Mini Notepad C++ setelah dua baris dimasukkan, bukan GUI.",
+      "en": "Actual Mini Notepad C++ CLI output after inserting two lines, not a GUI."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#141414"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/mini-notepad.png",
+        "reference": "https://github.com/MuhammadFaza-DU/mini-notepad-cpp/blob/3fc0890809173c4a1d00a97ff9b95593973dc6a0/src/main.cpp",
+        "state": "G++17 original source, genuine contiguous final buffer excerpt at56px for167px phone frames; full stdout/menu preserved separately. 2026-11-15",
+        "sha256": "0521207409a28ec052a47c3e6c0ba270a84b5e74ebfdd792a82e080b1cf8be94",
+        "width": 960,
+        "height": 600
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/mini-notepad-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "baf0629508dcc4f0e0f5e0dcfcdfe26831f7fc80ee559168783f8592a15b1ac5"
+      },
+      {
+        "path": "media/catalog/mini-notepad-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "ed51974ccea04b2a0f33623c40c89e384b9d402f231424e84429868f2f004279"
+      },
+      {
+        "path": "media/catalog/mini-notepad-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "e78c10c9790a15a802eebab339f5ce5a6ed46866a7ec43873612073e522aa865"
+      }
+    ]
+  },
+  {
+    "id": "czip",
+    "alt": {
+      "id": "Output nyata kompresi dan verifikasi CZIP pada file contoh 600 byte.",
+      "en": "Real CZIP compression and verification output for a 600-byte sample fixture."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#141414"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/czip.png",
+        "reference": "https://github.com/MuhammadFaza-DU/CZIP-simple-compression-txt/tree/3e4144a3bee193c9d1a6be515a4a9f358f797567",
+        "state": "GCC C11 original source; genuine contiguous verification stdout excerpt at56px, full compress/verify/decompress transcript retained; fixture only, not benchmark. 2026-11-15",
+        "sha256": "6cbe13d22782a572ca56d2e27860ae47a67b0c6040f5e0142b0696643b7ebe83",
+        "width": 960,
+        "height": 600
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/czip-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "5c4a2492e6d4cbc7833f9daf9f0badea07e9d41feccca00e2d9abe7a94ade4ca"
+      },
+      {
+        "path": "media/catalog/czip-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "e91bbb7269e22063dfe925b993a70c874ccdb53cbc26f7642c8fe289c52caf9f"
+      },
+      {
+        "path": "media/catalog/czip-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "4ee23a988eb89deb9647b37ee729baafb794e9d3d3d8265ab1342ef9c3260220"
+      }
+    ]
+  },
+  {
+    "id": "codecraft",
+    "alt": {
+      "id": "Cuplikan asli instruksi CodeCraft Optimizer untuk agent dan IDE.",
+      "en": "Actual CodeCraft Optimizer instruction excerpt for agents and IDEs."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#ffffff"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/codecraft.png",
+        "reference": "https://github.com/MuhammadFaza-DU/codecraft-optimizer-ide/blob/6e8e21b62d8ec3b218211620299b76af3a9d47ca/SKILL.md",
+        "state": "Actual document title and first sentence, source excerpt presentation at56px forphone; no invented application UI. Full raw document and original GitHub capture retained. 2026-11-15",
+        "sha256": "23655c8cf7ef604aae122d6f7a97511841abe435a423be0fab6ee55d940ae38f",
+        "width": 960,
+        "height": 600
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/codecraft-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "756be0f90bc6c55bf1cbc64dd4b871bd5716ccac2e974463503270ee0027cecd"
+      },
+      {
+        "path": "media/catalog/codecraft-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "d8ba28207494974ce31c7f2d96021efbf55921847cdabf3200aebd35b976d1d1"
+      },
+      {
+        "path": "media/catalog/codecraft-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "e0e300eac7c2417066cf00b93ff127abda4b3d3f484b50b2e9f93ffea91f4be5"
+      }
+    ]
+  },
+  {
+    "id": "optimizer-ai-web",
+    "alt": {
+      "id": "Cuplikan asli dokumen Optimizer AI Web untuk instruksi web atau chat.",
+      "en": "Actual Optimizer AI Web document excerpt for web or chat instructions."
+    },
+    "recipe": {
+      "kind": "contain",
+      "background": "#ffffff"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/optimizer-ai-web.png",
+        "reference": "https://github.com/MuhammadFaza-DU/optimizer-ai-web/blob/5dbe2451522417546eaa61e00e0347a90ff035b4/optimizer-ai-web.md",
+        "state": "Actual document title and opening paragraph, source excerpt presentation at56px forphone; no invented application UI. Full raw document and original GitHub capture retained. 2026-11-15",
+        "sha256": "a387571968943f9c13549b0aac03c1f45f1bf2cda89f786d52fcc4496eb5cbc9",
+        "width": 960,
+        "height": 600
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/optimizer-ai-web-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "5765e0b2e6852e1f56c47d9ad727f935b6e72c541d990e9dffe257fe1d1a168c"
+      },
+      {
+        "path": "media/catalog/optimizer-ai-web-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "3a918bfbb1dbf2a0a7351e7cde1cac5978c999825304d61ff926b8075a6ec56c"
+      },
+      {
+        "path": "media/catalog/optimizer-ai-web-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "c44de0f53dbf25fef58c66390422560ba12b7f2042df9b8f9f749f7aacd1890d"
+      }
+    ]
+  },
+  {
+    "id": "portfolio",
+    "alt": {
+      "id": "Home Astro V2 lokal dengan Lanyard siap dan intro Faza, masih dikembangkan.",
+      "en": "Local Astro V2 Home with ready Lanyard and Faza introduction, in development."
+    },
+    "recipe": {
+      "kind": "crop",
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 680,
+      "background": "#ffffff"
+    },
+    "sources": [
+      {
+        "path": "assets/masters/catalog/portfolio.png",
+        "reference": "http://127.0.0.1:4321/id/",
+        "state": "Local V2 development screenshot, 1280x800; opening complete and textured hero visible, 2026-11-15. Public V1 is not this version.",
+        "sha256": "657dde565146674861ee4b9aa0c422c0b276fd2a78dc66e606c492ef30cfc7ad",
+        "width": 1280,
+        "height": 800
+      }
+    ],
+    "outputs": [
+      {
+        "path": "media/catalog/portfolio-320.webp",
+        "width": 320,
+        "height": 200,
+        "sha256": "7a5c9ae0e3fc23767306defebdb5b7af9f06c8ec78c29be7c68d74d7739f3816"
+      },
+      {
+        "path": "media/catalog/portfolio-640.webp",
+        "width": 640,
+        "height": 400,
+        "sha256": "5e24eaf350d30b1c9ecb103054142a9083844e98b7c41f35e3fe3518ea9c79b8"
+      },
+      {
+        "path": "media/catalog/portfolio-960.webp",
+        "width": 960,
+        "height": 600,
+        "sha256": "541ed7abe9e3fece2bc39a4f9b60569a6179b0ab2a0561219b673e0edc372851"
+      }
+    ]
+  }
+]

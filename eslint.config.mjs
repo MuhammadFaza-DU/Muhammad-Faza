@@ -1,18 +1,30 @@
-import { defineConfig, globalIgnores } from "eslint/config";
-import nextVitals from "eslint-config-next/core-web-vitals";
-import nextTs from "eslint-config-next/typescript";
+import js from "@eslint/js";
+import astro from "eslint-plugin-astro";
+import tseslint from "typescript-eslint";
 
-const eslintConfig = defineConfig([
-  ...nextVitals,
-  ...nextTs,
-  // Override default ignores of eslint-config-next.
-  globalIgnores([
-    // Default ignores of eslint-config-next:
-    ".next/**",
-    "out/**",
-    "build/**",
-    "next-env.d.ts",
-  ]),
-]);
-
-export default eslintConfig;
+export default [
+  {
+    ignores: [
+      "archive/**", "assets/**", "dist/**", ".astro/**", "**/.wrangler/**",
+    ],
+  },
+  js.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...astro.configs["flat/recommended"],
+  {
+    files: ["**/*.{js,jsx,mjs,ts,tsx,astro}"],
+    languageOptions: {
+      parserOptions: { ecmaFeatures: { jsx: true } },
+      globals: {
+        console: "readonly", process: "readonly", Buffer: "readonly",
+        URL: "readonly", fetch: "readonly", AbortSignal: "readonly", window: "readonly",
+        document: "readonly", navigator: "readonly", localStorage: "readonly",
+        matchMedia: "readonly", requestAnimationFrame: "readonly",
+        cancelAnimationFrame: "readonly", ResizeObserver: "readonly",
+        IntersectionObserver: "readonly", HTMLElement: "readonly",
+        HTMLInputElement: "readonly", CustomEvent: "readonly",
+        setTimeout: "readonly", clearTimeout: "readonly",
+      },
+    },
+  },
+];

@@ -1,0 +1,26 @@
+.contact-form-panel { min-width: 0; overflow-wrap: anywhere; container: contact-form / inline-size; }
+.contact-form-lead { color: var(--text-secondary); text-align: justify; text-align-last: start; }
+.contact-message-form { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.contact-form-field { display: grid; gap: .5rem; min-width: 0; }
+.contact-form-field label { font-size: .9375rem; font-weight: 600; }
+.contact-form-field input, .contact-form-field textarea { width: 100%; min-width: 0; min-height: 50px; padding: .85rem 1rem; font: inherit; font-size: 1rem; line-height: 1.5; color: var(--text); background: var(--canvas); border: 1px solid var(--text-secondary); border-radius: 10px; }
+.contact-form-field textarea { min-height: 8rem; resize: vertical; }
+.contact-form-field input::placeholder, .contact-form-field textarea::placeholder { color: var(--text-secondary); opacity: 1; }
+.contact-form-field [aria-invalid="true"] { outline: 2px solid var(--text); outline-offset: 2px; }
+.contact-field-error { font-size: .8125rem; overflow-wrap: anywhere; }
+.contact-submit { width: 100%; min-height: 50px; }
+.contact-form-feedback { min-height: 1.6em; overflow-wrap: anywhere; font-size: .875rem; }
+.contact-form-feedback:empty { position: absolute; width: 1px; height: 1px; min-height: 0; overflow: hidden; clip-path: inset(50%); }
+.contact-form-nojs { color: var(--text-secondary); font-size: .8125rem; overflow-wrap: anywhere; }
+.contact-form-footer { display: grid; gap: .75rem; margin-top: 1rem; }
+.contact-form-footer .contact-resume { display: inline-flex; align-items: center; justify-self: start; min-height: 44px; }
+@container contact-form (min-width: 27rem) {
+  .contact-form-lead .contact-sentence { display: block; }
+  .contact-form-footer { grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 1rem; }
+}
+@media (min-width: 64rem) {
+  @container contact-form (min-width: 27rem) {
+    .contact-message-form { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    .contact-form-field--message, .contact-message-form > button, .contact-message-form > p, .contact-message-form > noscript { grid-column: 1 / -1; }
+  }
+}

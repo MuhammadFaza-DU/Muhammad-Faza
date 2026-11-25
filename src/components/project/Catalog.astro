@@ -1,0 +1,69 @@
+---
+import type { Locale } from "../../data/types";
+import { copy } from "../../i18n";
+import { projects } from "../../data/projects";
+import { sortProjects } from "../../lib/catalog";
+import media from "../../../docs/v2/assets/catalog-media.json";
+import "../../styles/catalog.css";
+const { locale } = Astro.props as { locale: Locale };
+const t = copy[locale];
+const categories = ["all","web","app","hardware","hybrid","tools"] as const;
+---
+<section class="container catalog" data-catalog data-catalog-locale={locale}>
+  <header class="catalog-heading">
+    <h1 data-motion-enter="0">{t.catalog.title}</h1>
+    <p class="muted" data-motion-enter="1">{t.catalog.lead}</p>
+  </header>
+  <div class="catalog-controls" data-catalog-controls hidden>
+    <div class="catalog-search">
+      <label for="project-query">{t.catalog.search}</label>
+      <input id="project-query" data-catalog-query type="search" placeholder={t.catalog.placeholder} autocomplete="off" />
+    </div>
+    <div class="catalog-categories" role="group" aria-label={t.catalog.category}>
+      {categories.map(category => <button type="button" data-catalog-category={category} aria-pressed={category==="all"}>{t.categories[category]}</button>)}
+    </div>
+  </div>
+  <noscript><p class="muted catalog-nojs">{t.catalog.noJs}</p></noscript>
+  <div class="catalog-results-bar">
+    <p class="muted" data-catalog-count>{projects.length} {t.catalog.count}</p>
+    <button class="catalog-reset" type="button" data-catalog-reset hidden>{t.catalog.reset}</button>
+  </div>
+  <p class="sr-only" role="status" aria-live="polite" data-catalog-announcement></p>
+  <div class="catalog-empty" data-catalog-empty hidden>
+    <h2>{t.catalog.emptyTitle}</h2>
+    <p class="muted" data-catalog-empty-text>{t.catalog.empty}</p>
+  </div>
+  <div class="catalog-list">
+    {sortProjects(projects).map((project,index) => {
+      const item = media.find(item=>item.id===project.thumbnailId)!;
+      const image = item.outputs[1];
+      const content = project.content[locale];
+      return <article data-catalog-card data-project-id={project.id} data-catalog-reveal>
+        <a class="catalog-card" href={`/${locale}/project/${project.slug}/`} aria-labelledby={`project-${project.id}`} data-motion-owner="catalog-card">
+          <div class="catalog-media">
+            <img src={`/${image.path}`} srcset={item.outputs.map(output=>`/${output.path} ${output.width}w`).join(", ")}
+              sizes="(min-width: 80rem) 285px, (min-width: 48rem) 31vw, (max-width: 22rem) 90vw, 46vw"
+              width={image.width} height={image.height} alt={item.alt[locale]} loading={index<4?"eager":"lazy"} decoding="async" />
+            <span class="catalog-media-error" hidden>{t.catalog.mediaError}</span>
+          </div>
+          <div class="catalog-card-content">
+            <p class="catalog-category">{t.categories[project.category]}</p>
+            <h2 id={`project-${project.id}`}>{content.title}</h2>
+            <p class="catalog-summary">{content.summary}</p>
+            <p class="catalog-status">{content.status}</p>
+            {project.tags.length>0&&<div class="catalog-tech" aria-label={t.detail.stack}>
+              {project.tags.slice(0,3).map((tag,index)=><span class:list={{"catalog-tech-third":index===2}}>{tag}</span>)}
+              {project.tags.length>3&&<span class="catalog-tech-more-desktop">+{project.tags.length-3}</span>}
+              {project.tags.length>2&&<span class="catalog-tech-more-phone">+{project.tags.length-2}</span>}
+            </div>}
+          </div>
+        </a>
+      </article>;
+    })}
+  </div>
+</section>
+<script>
+  import "../../client/catalog";
+  import "../../client/catalog-context";
+  import "../../client/catalog-motion";
+</script>

@@ -1,0 +1,30 @@
+---
+import type {Locale} from "../../data/types";
+import {contactChannels} from "../../data/contact";
+import {copy} from "../../i18n";
+import ContactForm from "./ContactForm.astro";
+import "../../styles/contact.css";
+const {locale}=Astro.props as {locale:Locale};
+const t=copy[locale];
+---
+<section class="container contact-page" aria-labelledby="contact-title">
+  <div class="contact-opening">
+    <h1 id="contact-title" data-motion-enter="0">{t.contact.title}</h1>
+    <p data-motion-enter="1">{t.contact.leadSentences.map((sentence,index)=><>{index>0&&" "}<span class="contact-sentence">{sentence}</span></>)}</p>
+  </div>
+  <div class="contact-layout">
+    <div class="social-profiles" data-motion-enter="2" data-motion-scroll>
+      <h2 data-motion-layer>{t.contact.profiles}</h2>
+      <p class="muted" data-motion-layer>{t.contact.profilesLead}</p>
+      <div class="social-grid" data-motion-layer>
+        {contactChannels.map(channel=><a class="social-channel" href={channel.url}
+          target={channel.id==="email"?undefined:"_blank"} rel={channel.id==="email"?undefined:"noreferrer"}>
+          <img src={channel.icon} width="28" height="28" alt="" loading="lazy" />
+          <span class="social-name">{channel.label}</span>
+          <span class="social-handle">{channel.handle}</span>
+        </a>)}
+      </div>
+    </div>
+    <ContactForm locale={locale}/>
+  </div>
+</section>

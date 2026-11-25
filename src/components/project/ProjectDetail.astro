@@ -1,0 +1,77 @@
+---
+import type { Locale, ProjectRecord } from "../../data/types";
+import { copy } from "../../i18n";
+import { projectDetails, detailCopy } from "../../data/project-details";
+import ProjectComments from "./ProjectComments.astro";
+import catalogMedia from "../../../docs/v2/assets/catalog-media.json";
+import featuredMedia from "../../../docs/v2/assets/featured-media.json";
+import "../../styles/project-detail.css";
+const { locale, project } = Astro.props as { locale: Locale; project: ProjectRecord };
+const t = copy[locale];
+const content = project.content[locale];
+const detail = projectDetails[project.id][locale];
+const labels = detailCopy[locale];
+const catalog = catalogMedia.find(item=>item.id===project.thumbnailId)!;
+const featured = featuredMedia.find(item=>item.id===project.id&&!item.homeOnly);
+const image = featured?.outputs[0] ?? catalog.outputs.at(-1)!;
+const imageAlt = catalog.alt[locale];
+const background = featured?.background ?? catalog.recipe.background;
+---
+<article class="container project-detail">
+  <a class="text-link detail-back" data-catalog-back href={`/${locale}/project/`}>{t.actions.back}</a>
+  <div class="detail-hero">
+    <figure class="detail-preview" aria-label={labels.preview} data-motion-enter="0">
+      <div class="detail-image-frame" style={`--detail-media-bg:${background};--detail-image-ratio:${image.width}/${image.height}`}>
+        <img class="detail-image" data-detail-image src={`/${image.path}`} width={image.width} height={image.height}
+          alt={imageAlt} loading="eager" fetchpriority="high" decoding="async" />
+        <p class="detail-media-error" data-detail-media-error hidden role="status">{labels.mediaError}</p>
+      </div>
+    </figure>
+    <header class="detail-heading" data-motion-enter="1">
+      <p class="detail-category">{t.categories[project.category]}</p>
+      <h1>{content.title}</h1>
+      <p class="detail-summary">{content.summary}</p>
+      <div class="detail-actions">
+        {project.links.map((link,index)=><a class:list={["button",{"button-secondary":index>0}]} href={link.url} target="_blank" rel="noreferrer">{link.label?.[locale]??t.detail[link.kind]}</a>)}
+      </div>
+    </header>
+  </div>
+  <dl class="detail-facts" data-motion-anchor data-motion-scroll>
+    <div data-motion-layer><dt>{labels.status}</dt><dd>{content.status}</dd></div>
+    <div data-motion-layer><dt>{labels.deliverable}</dt><dd>{detail.deliverable}</dd></div>
+    {project.tags.length>0&&<div data-motion-layer><dt>{t.detail.stack}</dt><dd>{project.tags.map(tag=><span>{tag}</span>)}</dd></div>}
+  </dl>
+  <div class="detail-body">
+    <div class="detail-story">
+      <section aria-labelledby="detail-about" data-motion-anchor data-motion-scroll>
+        <h2 id="detail-about">{t.detail.purpose}</h2>
+        {detail.overview.map(paragraph=><p>{paragraph}</p>)}
+      </section>
+      <section aria-labelledby="detail-features" data-motion-anchor data-motion-scroll>
+        <h2 id="detail-features">{labels.features}</h2>
+        <ul class="detail-highlights">
+          {detail.highlights.map(item=><li><h3>{item.title}</h3><p>{item.body}</p></li>)}
+        </ul>
+      </section>
+      <section aria-labelledby="detail-implementation" data-motion-anchor data-motion-scroll>
+        <h2 id="detail-implementation">{labels.implementation}</h2>
+        <p>{detail.implementation}</p>
+      </section>
+    </div>
+    <div class="detail-sidebar">
+      <aside class="detail-materials" aria-labelledby="detail-materials" data-motion-scroll>
+      <h2 id="detail-materials">{labels.materials}</h2>
+      <p class="detail-source-note">{labels.sourceNote}</p>
+      {content.development.map(paragraph=><p>{paragraph}</p>)}
+      <div class="detail-sources">
+        {detail.sources.map(source=><a href={source.url} target="_blank" rel="noreferrer">{source.label}</a>)}
+      </div>
+      </aside>
+      <ProjectComments locale={locale} slug={project.slug} />
+    </div>
+  </div>
+</article>
+<script>
+  import "../../client/catalog-context";
+  import "../../client/project-detail";
+</script>

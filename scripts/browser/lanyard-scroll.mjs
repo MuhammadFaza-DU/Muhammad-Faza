@@ -1,0 +1,33 @@
+globalThis.checkLanyardScroll=async page=>{
+  const results=[],errors=[];
+  const check=(caseId,passed,actual)=>results.push({caseId,passed:Boolean(passed),actual});
+  page.on("pageerror",error=>errors.push(error.message));
+  await page.emulateMedia({reducedMotion:"no-preference"});
+  await page.mouse.move(0,0);
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto("http://127.0.0.1:4321/en/",{waitUntil:"networkidle"});
+  await page.waitForFunction(()=>document.documentElement.dataset.opening==="complete",null,{timeout:20000});
+  const engine=page.locator(".lanyard");
+  await page.mouse.wheel(0,100);await page.waitForTimeout(120);
+  const down=Number(await engine.getAttribute("data-scroll-impulse"));
+  await page.mouse.wheel(0,-60);await page.waitForTimeout(120);
+  const up=Number(await engine.getAttribute("data-scroll-impulse"));
+  check("physical-impulse/follows-both-scroll-directions",down>0&&up<0,{down,up});
+  check("physical-impulse/bounded",Math.abs(down)<=2.4&&Math.abs(up)<=2.4);
+  const canvas=page.locator(".lanyard-canvas"),before=await canvas.screenshot();
+  await page.waitForTimeout(200);
+  check("physical-impulse/engine-continues-rendering",!before.equals(await canvas.screenshot()));
+  await page.evaluate(()=>window.scrollTo({top:0,behavior:"instant"}));
+  await page.locator(".lanyard-flip").focus();await page.keyboard.press("Enter");
+  await page.waitForSelector('.lanyard-portrait[data-face="back"]');
+  check("flip/retained-after-scroll",await page.locator(".lanyard-flip").getAttribute("aria-pressed")==="true");
+  await page.emulateMedia({reducedMotion:"reduce"});
+  await page.waitForSelector('.lanyard-portrait[data-reduced="true"]');
+  check("reduced/no-moving-3D-or-impulse",await canvas.count()===0);
+  await page.locator('.gooey-nav__list:not([aria-hidden]) a[href="/en/contact/"]').click();
+  await page.waitForURL("**/en/contact/");
+  await page.mouse.wheel(0,200);
+  check("cleanup/no-engine-on-other-page",await page.locator(".lanyard").count()===0);
+  check("no-page-errors",!errors.length,errors);
+  return {passed:results.every(r=>r.passed),results,errors};
+}

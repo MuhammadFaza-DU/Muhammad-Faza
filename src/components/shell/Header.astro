@@ -1,0 +1,59 @@
+---
+import type { Locale, PageKind } from "../../data/types";
+import { copy } from "../../i18n";
+import Brand from "./Brand.astro";
+import GooeyNavigation from "./GooeyNavigation";
+const { locale, page, slug } = Astro.props as { locale: Locale; page: PageKind; slug?: string };
+const t = copy[locale];
+const items = [
+  { label: t.nav.home, href: `/${locale}/`, current: "page" as const },
+  { label: t.nav.project, href: `/${locale}/project/`, current: page === "detail" ? "true" as const : "page" as const },
+  { label: t.nav.contact, href: `/${locale}/contact/`, current: "page" as const },
+];
+const path = page === "home" ? "" : page === "contact" ? "contact/" : page === "project" ? "project/" : `project/${slug}/`;
+---
+<header class="site-header" data-mode="normal">
+  <div class="header-inner container">
+      <Brand locale={locale} />
+      <div class="header-nav">
+        <GooeyNavigation items={items} active={page === "contact" ? "contact" : page === "home" ? "home" : "project"} label={t.nav.label} client:load transition:persist="primary-navigation" />
+        <p class="nav-scroll-cue">{t.common.navScroll}</p>
+      </div>
+      <button class="preferences-trigger" type="button" data-preferences-trigger
+        aria-label={t.preferences.menu} aria-controls="header-preferences" aria-expanded="false" hidden>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+          <path d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+      <div class="preferences" id="header-preferences" data-preferences-panel>
+        <div class="language-control">
+          <span class="sr-only">{t.preferences.language}</span>
+          <details class="language-dropdown" data-language-dropdown>
+            <summary data-language-toggle aria-label={`${t.preferences.language}: ${locale.toUpperCase()}`}>
+              <span>{locale.toUpperCase()}</span>
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 6 5 5 5-5" /></svg>
+            </summary>
+            <div class="language-options">
+              <a href={`/id/${path}`} lang="id" aria-current={locale === "id" ? "true" : undefined} data-locale="id">ID</a>
+              <a href={`/en/${path}`} lang="en" aria-current={locale === "en" ? "true" : undefined} data-locale="en">EN</a>
+            </div>
+          </details>
+        </div>
+        <button class="theme-toggle" type="button" data-theme-toggle data-light={t.preferences.light}
+          data-dark={t.preferences.dark} aria-label={`${t.preferences.theme}: ${t.preferences.dark}`} aria-pressed="false" disabled>
+          <span class="theme-switch" aria-hidden="true">
+            <span class="theme-switch-thumb">
+              <svg class="theme-icon theme-icon--sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42" />
+              </svg>
+              <svg class="theme-icon theme-icon--moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20.9 13.2A8.6 8.6 0 0 1 10.8 3.1a8.6 8.6 0 1 0 10.1 10.1Z" />
+              </svg>
+            </span>
+          </span>
+          <span class="theme-text" data-theme-state>{t.preferences.light}</span>
+        </button>
+      </div>
+  </div>
+</header>

@@ -2,32 +2,50 @@
   "name": "muhammad-faza-portfolio",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "dev": "astro dev",
+    "build": "astro build",
+    "start": "astro preview",
+    "lint": "eslint src services/comments scripts/comments-admin.mjs scripts/check-release-secrets.mjs scripts/lib scripts/tests scripts/browser scripts/prepare-assets.mjs scripts/prepare-catalog-assets.mjs scripts/verify-relocation.mjs astro.config.mjs eslint.config.mjs",
+    "assets:catalog": "node scripts/prepare-catalog-assets.mjs",
+    "assets:prepare": "node scripts/prepare-assets.mjs",
+    "typecheck": "astro check && tsc --noEmit --incremental false && npm run comments:typecheck",
+    "comments:dev": "wrangler dev --local --config services/comments/wrangler.jsonc --ip 127.0.0.1 --port 8787",
+    "comments:test": "node --test scripts/tests/comments-*.test.mjs",
+    "comments:test:local": "node scripts/tests/comments-local-runtime.mjs",
+    "comments:typecheck": "tsc --noEmit --project services/comments/tsconfig.json",
+    "test": "node --test scripts/tests/*.test.mjs",
+    "check:release-secrets": "node scripts/check-release-secrets.mjs"
   },
   "dependencies": {
-    "@splinetool/react-spline": "^4.1.0",
-    "@splinetool/runtime": "^1.12.98",
-    "clsx": "^2.1.1",
-    "gsap": "^3.15.0",
-    "motion": "^12.42.0",
-    "next": "^16.3.1",
+    "@astrojs/react": "7.1.9",
+    "astro": "7.4.12",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "tailwind-merge": "^3.6.0"
+    "three": "0.187.0"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@astrojs/check": "0.9.12",
+    "@eslint/js": "9.39.4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.3.1",
+    "@types/three": "0.187.0",
+    "eslint": "9.39.4",
+    "eslint-plugin-astro": "1.7.0",
+    "eslint-plugin-jsx-a11y": "6.10.2",
     "sharp": "^0.35.3",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.72.2",
+    "wrangler": "4.155.0"
+  },
+  "overrides": {
+    "@typescript-eslint/typescript-estree": {
+      "minimatch": "11.0.1"
+    }
+  },
+  "engines": {
+    "node": ">=22.23.4"
   }
 }

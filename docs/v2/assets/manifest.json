@@ -1,0 +1,683 @@
+[
+  {
+    "id": "apple-touch",
+    "sourcePath": "assets/masters/brand/mf-refined.svg",
+    "sourceRef": "same selected Refined geometry",
+    "sourceSha256": "b6d2fce1f8c0fc22b3ab373c854a64c142be42747f931a606fbee54ef95e849a",
+    "kind": "identity",
+    "license": "Owner-supplied selected monogram.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "apple-touch-icon.png",
+        "width": 180,
+        "height": 180
+      }
+    ]
+  },
+  {
+    "id": "archivo",
+    "sourceUrl": "https://fonts.gstatic.com/s/archivo/v25/k3kQo8UDI-1M0wlSfdnoLg.woff2",
+    "sourceRef": "https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap",
+    "sourceSha256": "e3a28eade21a900c7155a247757f4b2834c07bb7ef07ad7efa55cebaac1e8f5e",
+    "kind": "font",
+    "license": "SIL Open Font License 1.1; licenses/archivo-OFL.txt",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "fonts/archivo.woff2",
+        "width": null,
+        "height": null
+      }
+    ],
+    "axes": {
+      "wdth": [
+        62,
+        125
+      ],
+      "wght": [
+        100,
+        900
+      ]
+    },
+    "licenseUrl": "https://raw.githubusercontent.com/google/fonts/main/ofl/archivo/OFL.txt"
+  },
+  {
+    "id": "armor",
+    "sourcePath": "assets/masters/portraits/Futuristic Armored Hero Portrait.png",
+    "sourceRef": "owner-selected supplied master",
+    "sourceSha256": "5779e27e2420a58910ab6b12035c1f631fa3fd63740b4d0b46064a81f171fec0",
+    "kind": "portrait",
+    "license": "Owner-supplied artwork; preserve source and do not claim original photographic engineering evidence.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/portrait/armor-512.webp",
+        "width": 512,
+        "height": 640
+      },
+      {
+        "path": "media/portrait/armor-768.webp",
+        "width": 768,
+        "height": 960
+      }
+    ],
+    "registration": {
+      "sourceCanvas": [
+        1122,
+        1402
+      ],
+      "resizedWidth": 1043,
+      "translate": [
+        32,
+        98
+      ],
+      "stage": [
+        1122,
+        1402
+      ],
+      "method": "uniform resize and translation; face not repainted/warped"
+    },
+    "caption": "User-supplied armored portrait artwork."
+  },
+  {
+    "id": "favicon",
+    "sourcePath": "assets/masters/brand/mf-refined.svg",
+    "sourceRef": "same selected Refined geometry",
+    "sourceSha256": "b6d2fce1f8c0fc22b3ab373c854a64c142be42747f931a606fbee54ef95e849a",
+    "kind": "identity",
+    "license": "Owner-supplied selected monogram.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "favicon.svg",
+        "width": 1120,
+        "height": 1120
+      }
+    ]
+  },
+  {
+    "id": "featured-capify",
+    "sourcePath": "assets/masters/project-screens/capify-featured-wide.png",
+    "sourceUrl": "https://capify-v1-demo.vercel.app/",
+    "sourceRef": "Genuine public interface captured 2026-11-16 at 1600x900 and independently at 600x1100; demo frontend only",
+    "sourceSha256": "414735908dbe06e80d7175134277b4c7e72471fb7675d19f608cab680db9374a",
+    "kind": "screenshot",
+    "license": "Actual project UI; underlying product artwork and trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/capify/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/capify-featured-wide.png",
+        "sourceSha256": "414735908dbe06e80d7175134277b4c7e72471fb7675d19f608cab680db9374a"
+      },
+      {
+        "path": "media/projects/capify/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/project-screens/capify-featured-tall.png",
+        "sourceSha256": "ef913ca4ac8ffd92687fe899df54e3486cb28851fddf97b2553fdf43842ec70a"
+      }
+    ],
+    "caption": "Genuine public interface captured 2026-11-16 at 1600x900 and independently at 600x1100; demo frontend only",
+    "fit": "cover"
+  },
+  {
+    "id": "featured-gamein",
+    "sourcePath": "assets/masters/project-screens/gamein-catalog-wide.png",
+    "sourceUrl": "https://gamein-8cq.pages.dev/id/katalog/",
+    "sourceRef": "Live public catalog captured 2026-11-15, desktop 1600x900 and independently rendered narrow 600x1100; no UI fabrication",
+    "sourceSha256": "c50ba56dfb793cb94a2a4a050ea6e6085d80ac76bbe99a9ce2b226d9a0528e32",
+    "kind": "screenshot",
+    "license": "Actual project UI; underlying product artwork and trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/gamein/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/gamein-catalog-wide.png",
+        "sourceSha256": "c50ba56dfb793cb94a2a4a050ea6e6085d80ac76bbe99a9ce2b226d9a0528e32"
+      },
+      {
+        "path": "media/projects/gamein/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/project-screens/gamein-catalog-tall.png",
+        "sourceSha256": "af5e363f94ffc3d48107683598e65aca4320c3555e7904eed934d2c7c1ee9dd0"
+      }
+    ],
+    "caption": "Live public catalog captured 2026-11-15, desktop 1600x900 and independently rendered narrow 600x1100; no UI fabrication",
+    "fit": "cover"
+  },
+  {
+    "id": "featured-mariokan",
+    "sourcePath": "assets/masters/catalog/mariokan.png",
+    "sourceUrl": "https://github.com/MuhammadFaza-DU/MarioKan/tree/d584d7e876cf2b4025b281f05427e114c2f6abe7",
+    "sourceRef": "Original repository architecture diagram; full diagram wide and central controller/player/collision excerpt tall; design, not finished hardware",
+    "sourceSha256": "5cc47969a51b2a81e5434d4c1c2c123cc7d21c9f7140d2c7e4975c9affae37e2",
+    "kind": "architecture",
+    "license": "Original project architecture documentation, not hardware or gameplay evidence.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/mariokan/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/catalog/mariokan.png",
+        "sourceSha256": "5cc47969a51b2a81e5434d4c1c2c123cc7d21c9f7140d2c7e4975c9affae37e2"
+      },
+      {
+        "path": "media/projects/mariokan/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/catalog/mariokan.png",
+        "sourceSha256": "5cc47969a51b2a81e5434d4c1c2c123cc7d21c9f7140d2c7e4975c9affae37e2",
+        "excerpt": {
+          "left": 1100,
+          "top": 440,
+          "width": 1400,
+          "height": 1450
+        }
+      }
+    ],
+    "caption": "Original repository architecture diagram; full diagram wide and central controller/player/collision excerpt tall; design, not finished hardware",
+    "fit": "contain"
+  },
+  {
+    "id": "featured-stackcrate",
+    "sourcePath": "assets/masters/project-screens/stackcrate-catalog-wide.png",
+    "sourceUrl": "https://stack-crate.vercel.app/",
+    "sourceRef": "Live public asset grid captured 2026-11-15, desktop 1600x900 and independently rendered narrow 600x1100; public browsing only",
+    "sourceSha256": "b8f4b7b8cdbca05c8ff7f279414eacfa3d5e06a34fd22314c83302d93770bead",
+    "kind": "screenshot",
+    "license": "Actual project UI; underlying product artwork and trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/stackcrate/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/stackcrate-catalog-wide.png",
+        "sourceSha256": "b8f4b7b8cdbca05c8ff7f279414eacfa3d5e06a34fd22314c83302d93770bead"
+      },
+      {
+        "path": "media/projects/stackcrate/featured-catalog-tall.webp",
+        "width": 600,
+        "height": 1100,
+        "sourcePath": "assets/masters/project-screens/stackcrate-catalog-tall.png",
+        "sourceSha256": "73b7db892c266e0c4a3455976cf831824778d4c1c31896278028533745cb9903"
+      }
+    ],
+    "caption": "Live public asset grid captured 2026-11-15, desktop 1600x900 and independently rendered narrow 600x1100; public browsing only",
+    "fit": "cover"
+  },
+  {
+    "id": "featured-tazk",
+    "sourcePath": "assets/masters/project-screens/tazk-home.webp",
+    "sourceUrl": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/home.webp",
+    "sourceRef": "Repository app screenshot pinned to f7d2997; not recaptured on a local device",
+    "sourceSha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628",
+    "kind": "screenshot",
+    "license": "Actual project UI; underlying product artwork and trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/tazk/featured-catalog-wide.webp",
+        "width": 1600,
+        "height": 900,
+        "sourcePath": "assets/masters/project-screens/tazk-home.webp",
+        "sourceSha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628",
+        "sourcePaths": [
+          "assets/masters/project-screens/tazk-home.webp",
+          "assets/masters/project-screens/tazk-pomodoro.webp",
+          "assets/masters/project-screens/tazk-stats.webp"
+        ],
+        "screenFrames": [
+          {
+            "path": "assets/masters/project-screens/tazk-home.webp",
+            "left": 137,
+            "top": 12,
+            "width": 426,
+            "height": 876
+          },
+          {
+            "path": "assets/masters/project-screens/tazk-pomodoro.webp",
+            "left": 587,
+            "top": 12,
+            "width": 426,
+            "height": 876
+          },
+          {
+            "path": "assets/masters/project-screens/tazk-stats.webp",
+            "left": 1037,
+            "top": 12,
+            "width": 426,
+            "height": 876
+          }
+        ],
+        "composition": "Three complete actual screens, aspect ratios preserved; mobile uses the Home screen"
+      },
+      {
+        "path": "media/projects/tazk/featured-catalog-tall.webp",
+        "width": 460,
+        "height": 946,
+        "sourcePath": "assets/masters/project-screens/tazk-home.webp",
+        "sourceSha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628"
+      }
+    ],
+    "caption": "Repository app screenshot pinned to f7d2997; not recaptured on a local device",
+    "fit": "contain",
+    "sources": [
+      {
+        "path": "assets/masters/project-screens/tazk-home.webp",
+        "sha256": "a1ec14e95a9176b8fc22da2cd170dcd5132d40ec5ace3dbd8c58936e456ac628",
+        "url": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/home.webp"
+      },
+      {
+        "path": "assets/masters/project-screens/tazk-pomodoro.webp",
+        "sha256": "056db294a428aee2417ee483042bf351378dae5916427382c3f36daeb59f60d5",
+        "url": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/pomodoro.webp"
+      },
+      {
+        "path": "assets/masters/project-screens/tazk-stats.webp",
+        "sha256": "c7b218cdc34daf719684ef683e0b8fe1c0f35d4ea99efdc814335bcd2b2274b3",
+        "url": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/f7d299787307fbac84b0c475ecfee14d5883c51a/docs/assets/screens/stats.webp"
+      }
+    ]
+  },
+  {
+    "id": "gamein",
+    "sourceUrl": "https://raw.githubusercontent.com/MuhammadFaza-DU/gamein/master/design/brand/logo.png",
+    "sourceRef": "repository branch path; captured source hash above",
+    "sourceSha256": "d41219967ccb277a6a25814bd4ef619b67a9e52708a592663e02e73a4bcc1b67",
+    "kind": "identity",
+    "license": "Existing project repository artwork; final ownership/attribution review remains.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/gamein/identity.webp",
+        "width": 640,
+        "height": 640
+      }
+    ],
+    "caption": "GameIn identity mascot from its repository, not gameplay."
+  },
+  {
+    "id": "lanyard-brand",
+    "sourcePath": "assets/masters/brand/mf-refined.svg",
+    "sourceRef": "Selected Refined paths, white on black, no silhouette changes",
+    "sourceSha256": "b6d2fce1f8c0fc22b3ab373c854a64c142be42747f931a606fbee54ef95e849a",
+    "kind": "identity",
+    "license": "Owner-supplied monogram.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/lanyard/back.webp",
+        "width": 768,
+        "height": 1080
+      },
+      {
+        "path": "media/lanyard/strap.webp",
+        "width": 384,
+        "height": 128
+      }
+    ]
+  },
+  {
+    "id": "lanyard-front",
+    "sourcePath": "assets/masters/portraits/Confident Young Man in Charcoal Suit.png",
+    "sourceRef": "Owner-selected studio, cover crop; face not edited",
+    "sourceSha256": "6b20333cc5a4d7586071929aa9d065b5c17f18f3467cc98c5d3e6d14b9639275",
+    "kind": "portrait",
+    "license": "Owner-supplied artwork.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/lanyard/front.webp",
+        "width": 768,
+        "height": 1080
+      }
+    ]
+  },
+  {
+    "id": "mf-black",
+    "sourcePath": "assets/masters/brand/mf-refined.svg",
+    "sourceRef": "Refined selected by owner 2026-11-14",
+    "sourceSha256": "b6d2fce1f8c0fc22b3ab373c854a64c142be42747f931a606fbee54ef95e849a",
+    "kind": "identity",
+    "license": "Owner-supplied selected monogram.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/brand/mf-black.svg",
+        "width": 1120,
+        "height": 1120
+      }
+    ],
+    "caption": "Selected MF monogram, square padding derivative; original paths unchanged."
+  },
+  {
+    "id": "mf-white",
+    "sourcePath": "assets/masters/brand/mf-refined.svg",
+    "sourceRef": "Refined selected by owner 2026-11-14",
+    "sourceSha256": "b6d2fce1f8c0fc22b3ab373c854a64c142be42747f931a606fbee54ef95e849a",
+    "kind": "identity",
+    "license": "Owner-supplied selected monogram.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/brand/mf-white.svg",
+        "width": 1120,
+        "height": 1120
+      }
+    ],
+    "caption": "Selected MF monogram, square padding derivative; original paths unchanged."
+  },
+  {
+    "id": "normal",
+    "sourcePath": "assets/masters/portraits/Confident Suit Portrait Cutout.png",
+    "sourceRef": "owner-selected supplied master",
+    "sourceSha256": "83c596cb81f728c2a94123294a9df83538a351e4e3c622da6b7d86e607c9b576",
+    "kind": "portrait",
+    "license": "Owner-supplied artwork; preserve source and do not claim original photographic engineering evidence.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/portrait/normal-512.webp",
+        "width": 512,
+        "height": 640
+      },
+      {
+        "path": "media/portrait/normal-768.webp",
+        "width": 768,
+        "height": 960
+      }
+    ],
+    "registration": null,
+    "caption": "Muhammad Faza portrait."
+  },
+  {
+    "id": "resume",
+    "sourcePath": "assets/masters/documents/Resume.pdf",
+    "sourceRef": "existing resume, byte-identical copy",
+    "sourceSha256": "a7f90ac151163d7ee7a81e132b1e649f8aaac0de05faee40f5f426d4754d2274",
+    "kind": "document",
+    "license": "Owner-provided resume.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "assets/documents/Resume.pdf",
+        "width": null,
+        "height": null
+      }
+    ]
+  },
+  {
+    "id": "social-email",
+    "sourcePath": "assets/masters/social-icons/email.svg",
+    "sourceRef": "Existing portfolio V1 icon, byte-identical curated copy",
+    "sourceSha256": "a174d19ab56055aa34eb5d924837fc2f39d60b605e5716c4801a2d3b0f137a56",
+    "kind": "identity",
+    "license": "Existing portfolio icon; original brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/social/email.svg",
+        "width": 24,
+        "height": 24
+      }
+    ]
+  },
+  {
+    "id": "social-github",
+    "sourcePath": "assets/masters/social-icons/github.svg",
+    "sourceRef": "Existing portfolio V1 icon, byte-identical curated copy",
+    "sourceSha256": "f0ebc2d86a24701a16788e41f0a98b464c3bbc8b7e670fc1deb27d5c59a1b76d",
+    "kind": "identity",
+    "license": "Existing portfolio icon; original brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/social/github.svg",
+        "width": 24,
+        "height": 24
+      }
+    ]
+  },
+  {
+    "id": "social-instagram",
+    "sourcePath": "assets/masters/social-icons/instagram.svg",
+    "sourceRef": "Existing portfolio V1 icon, byte-identical curated copy",
+    "sourceSha256": "a328bb0001b8e95aef881e0f9857e8f533c57edfd5acc26f892dd5406e830364",
+    "kind": "identity",
+    "license": "Existing portfolio icon; original brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/social/instagram.svg",
+        "width": 24,
+        "height": 24
+      }
+    ]
+  },
+  {
+    "id": "social-linkedin",
+    "sourcePath": "assets/masters/social-icons/linkedin.svg",
+    "sourceRef": "Existing portfolio V1 icon, byte-identical curated copy",
+    "sourceSha256": "812f2872aa02a094c04fd68ae2ddb5f36d73ba49bae36b669171ac0eee24d779",
+    "kind": "identity",
+    "license": "Existing portfolio icon; original brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/social/linkedin.svg",
+        "width": 24,
+        "height": 24
+      }
+    ]
+  },
+  {
+    "id": "social-tiktok",
+    "sourcePath": "assets/masters/social-icons/tiktok.svg",
+    "sourceRef": "Existing portfolio V1 icon, byte-identical curated copy",
+    "sourceSha256": "303a6cdccde66c8e2c2c3b193234aec7a0c0c5aa9ae9e2242888f0c6138fb41a",
+    "kind": "identity",
+    "license": "Existing portfolio icon; original brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/social/tiktok.svg",
+        "width": 24,
+        "height": 24
+      }
+    ]
+  },
+  {
+    "id": "social-youtube",
+    "sourcePath": "assets/masters/social-icons/youtube.svg",
+    "sourceRef": "Existing portfolio V1 icon, byte-identical curated copy",
+    "sourceSha256": "ca355fa81afd49c49af68e4d87ce2ae7c95443eec4373c6febf955ecd09ff47c",
+    "kind": "identity",
+    "license": "Existing portfolio icon; original brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/social/youtube.svg",
+        "width": 24,
+        "height": 24
+      }
+    ]
+  },
+  {
+    "id": "stackcrate",
+    "sourceUrl": "https://raw.githubusercontent.com/MuhammadFaza-DU/StackCrate/main/public/favicon.svg",
+    "sourceRef": "repository branch path; captured source hash above",
+    "sourceSha256": "2031cf0aa4b97c2d91213d5a357eab8398845575726f87758fdc75f1ce66887f",
+    "kind": "identity",
+    "license": "Existing project repository artwork; final ownership/attribution review remains.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/stackcrate/identity.webp",
+        "width": 640,
+        "height": 640
+      }
+    ],
+    "caption": "StackCrate identity from its repository, not a product screenshot."
+  },
+  {
+    "id": "studio",
+    "sourcePath": "assets/masters/portraits/Confident Young Man in Charcoal Suit.png",
+    "sourceRef": "owner-selected supplied master",
+    "sourceSha256": "6b20333cc5a4d7586071929aa9d065b5c17f18f3467cc98c5d3e6d14b9639275",
+    "kind": "portrait",
+    "license": "Owner-supplied artwork; preserve source and do not claim original photographic engineering evidence.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/portrait/studio-512.webp",
+        "width": 512,
+        "height": 640
+      },
+      {
+        "path": "media/portrait/studio-768.webp",
+        "width": 768,
+        "height": 960
+      }
+    ],
+    "registration": null,
+    "caption": "Muhammad Faza portrait."
+  },
+  {
+    "id": "tazk",
+    "sourceUrl": "https://raw.githubusercontent.com/MuhammadFaza-DU/Tazk-Android-App/main/docs/assets/tazk-banner.png",
+    "sourceRef": "repository branch path; captured source hash above",
+    "sourceSha256": "5c4aca5b3e0778fbcbe445bb72566e831b29383ba78e635ee10456b92a3612f3",
+    "kind": "identity",
+    "license": "Existing project repository artwork; final ownership/attribution review remains.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/projects/tazk/identity.webp",
+        "width": 1280,
+        "height": 400
+      }
+    ],
+    "caption": "Tazk identity banner from its repository, not a screenshot."
+  },
+  {
+    "id": "tool-arduino",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/arduino/arduino-original.svg",
+    "sourceRef": "devicon v2.17.0",
+    "sourceSha256": "e1748d89b57310e6272df4de73a49c71b597126a5104c1e22cf5231c90507e94",
+    "kind": "identity",
+    "license": "Devicon MIT distribution; respective brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/tools/arduino.svg",
+        "width": 128,
+        "height": 128
+      }
+    ]
+  },
+  {
+    "id": "tool-figma",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/figma/figma-original.svg",
+    "sourceRef": "devicon v2.17.0",
+    "sourceSha256": "d37c2bf1a1d4f10aeffb224e44da672cb8b9510f6e5a2e24b61758262995805e",
+    "kind": "identity",
+    "license": "Devicon MIT distribution; respective brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/tools/figma.svg",
+        "width": 128,
+        "height": 128
+      }
+    ]
+  },
+  {
+    "id": "tool-matlab",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/matlab/matlab-original.svg",
+    "sourceRef": "devicon v2.17.0",
+    "sourceSha256": "03f162fa2d349019b1fad920206b27246e5f5b48e6f7c15fb890fc3e8d3c82e0",
+    "kind": "identity",
+    "license": "Devicon MIT distribution; respective brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/tools/matlab.svg",
+        "width": 128,
+        "height": 128
+      }
+    ]
+  },
+  {
+    "id": "tool-mysql",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/mysql/mysql-original.svg",
+    "sourceRef": "devicon v2.17.0",
+    "sourceSha256": "f73fa5d6b9da33fbf540ff96f5360c24b6d29d883ecfe6fcaecf89a8d3456067",
+    "kind": "identity",
+    "license": "Devicon MIT distribution; respective brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/tools/mysql.svg",
+        "width": 128,
+        "height": 128
+      }
+    ]
+  },
+  {
+    "id": "tool-opencode",
+    "sourceUrl": "https://opencode.ai/favicon.svg",
+    "sourceRef": "official site favicon, captured source hash above",
+    "sourceSha256": "e29bbe33380ad1c1ada9134b52f229d30e9776d60481512c9d81f2bb6f37def9",
+    "kind": "identity",
+    "license": "Official OpenCode identity; brand attribution, not agent-authored artwork.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/tools/opencode.svg",
+        "width": 512,
+        "height": 512
+      }
+    ]
+  },
+  {
+    "id": "tool-supabase",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/supabase/supabase-original.svg",
+    "sourceRef": "devicon v2.17.0",
+    "sourceSha256": "bb8d502577de5e864437542bc2655b5d4d4782589386fc4583d912f46ac73181",
+    "kind": "identity",
+    "license": "Devicon MIT distribution; respective brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/tools/supabase.svg",
+        "width": 128,
+        "height": 128
+      }
+    ]
+  },
+  {
+    "id": "tool-vscode",
+    "sourceUrl": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/vscode/vscode-original.svg",
+    "sourceRef": "devicon v2.17.0",
+    "sourceSha256": "503d580c442a7071aae180d9b4766e312e4600bf0e9d842b30f56d0e614eceb8",
+    "kind": "identity",
+    "license": "Devicon MIT distribution; respective brand trademarks retained.",
+    "review": "prepared; visual integration pending",
+    "outputs": [
+      {
+        "path": "media/tools/vscode.svg",
+        "width": 128,
+        "height": 128
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import ContactPage from "../../../components/contact/ContactPage.astro";
+import { copy, locales } from "../../../i18n";
+import type { Locale } from "../../../data/types";
+export function getStaticPaths() { return locales.map(locale => ({params:{locale}})); }
+const locale = Astro.params.locale as Locale;
+const t = copy[locale];
+---
+<SiteLayout locale={locale} title={`${t.nav.contact} · Muhammad Faza`} description={t.contact.lead} page="contact">
+  <ContactPage locale={locale} />
+</SiteLayout>

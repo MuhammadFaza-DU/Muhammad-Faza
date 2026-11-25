@@ -1,0 +1,10 @@
+---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import Catalog from "../../../components/project/Catalog.astro";
+import { copy, locales } from "../../../i18n";
+import type { Locale } from "../../../data/types";
+export function getStaticPaths() { return locales.map(locale => ({ params: { locale } })); }
+const locale = Astro.params.locale as Locale;
+const t = copy[locale];
+---
+<SiteLayout locale={locale} title={`${t.catalog.title} · Muhammad Faza`} description={t.catalog.lead} page="project"><Catalog locale={locale} /></SiteLayout>

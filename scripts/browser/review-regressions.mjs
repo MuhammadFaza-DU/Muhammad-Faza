@@ -1,0 +1,88 @@
+globalThis.checkReviewRegressions = async page => {
+  const results=[],errors=[];
+  page.on("pageerror",error=>errors.push(error.message));
+  const check=(caseId,passed,actual)=>results.push({caseId,passed,actual});
+  const settle=()=>page.evaluate(()=>new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve))));
+  const origin="http://127.0.0.1:4321";
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(`${origin}/en/`,{waitUntil:"networkidle"});
+  await page.locator("#work").evaluate(el=>el.scrollIntoView({block:"start"}));
+  await settle();
+  await page.evaluate(()=>window.dispatchEvent(new window.PageTransitionEvent("pagehide",{persisted:true})));
+  await page.setViewportSize({width:390,height:400});
+  await settle();
+  check("bfcache/persisted-lifecycle",await page.locator(".featured-stack").getAttribute("data-stack")==="flow");
+  await page.setViewportSize({width:1440,height:1000});
+  await page.goto(`${origin}/en/`,{waitUntil:"networkidle"});
+  await page.locator(".stack-slot").nth(1).evaluate(el=>el.scrollIntoView({block:"start"}));
+  await settle();
+  const title=page.locator("#featured-gamein");
+  const before=await title.boundingBox();
+  await page.emulateMedia({reducedMotion:"reduce"});
+  await settle();
+  const after=await title.boundingBox();
+  check("stack/live-reduce-reading-position",Math.abs(after.y-before.y)<=2,{before:before.y,after:after.y});
+  await page.emulateMedia({reducedMotion:"no-preference"});
+  await page.goto(`${origin}/en/`,{waitUntil:"networkidle"});
+  await page.emulateMedia({reducedMotion:"reduce"});
+   await page.locator('.gooey-nav__list:not([aria-hidden]) a').nth(2).click();
+   await page.waitForURL("**/en/contact/");
+   await page.waitForFunction(()=>document.querySelector('.gooey-nav__list:not([aria-hidden]) a[aria-current="page"]')?.textContent==="Contact");
+  await page.evaluate(()=>new Promise(resolve=>setTimeout(resolve,100)));
+  const clip=await page.locator(".gooey-nav__list--active").evaluate(el=>el.style.clipPath);
+  check("nav/live-reduce-static-pill",(clip.match(/M/g)||[]).length===1&&clip.includes("A"),{clipLength:clip.length});
+   await page.locator('.gooey-nav__list:not([aria-hidden]) a').first().click();
+   await page.waitForURL("**/en/");
+   await page.locator("#hire").evaluate(el=>el.scrollIntoView({block:"start"}));
+  await page.locator(".profile-card__contact").hover();
+  await page.mouse.down();
+  const pressed=await page.locator(".profile-card__contact").evaluate(el=>window.getComputedStyle(el).transform);
+  await page.mouse.up();
+  check("profile/reduce-press-no-scale",pressed==="none",pressed);
+  await page.emulateMedia({reducedMotion:"no-preference"});
+  await page.goto(`${origin}/en/`,{waitUntil:"networkidle"});
+  await page.waitForSelector(".gooey-nav[data-enhanced]");
+  const lost=await page.evaluate(async()=>{
+    const canvas=document.querySelector(".gooey-nav__canvas"),gl=canvas.getContext("webgl2");
+    const extension=gl?.getExtension("WEBGL_lose_context");
+    if(!extension)return {supported:false};
+    await new Promise(resolve=>{canvas.addEventListener("webglcontextlost",()=>setTimeout(resolve,40),{once:true});extension.loseContext();});
+    const fallback=document.querySelector(".gooey-nav__fallback");
+    const actual={supported:true,canvasDisplay:window.getComputedStyle(canvas).display,fallbackDisplay:window.getComputedStyle(fallback).display};
+    if(window.getComputedStyle(canvas).display==="none") {
+      await new Promise(resolve=>{
+        canvas.addEventListener("webglcontextrestored",resolve,{once:true});
+        extension.restoreContext();
+      });
+      actual.restoredCanvas=window.getComputedStyle(canvas).display;
+    }
+    return actual;
+  });
+  check("nav/context-loss-fallback",lost.supported&&lost.canvasDisplay==="none"&&lost.fallbackDisplay==="block",lost);
+  check("nav/context-restores",lost.restoredCanvas==="block",lost.restoredCanvas);
+  await page.goto(`${origin}/en/`,{waitUntil:"networkidle"});
+  await page.locator(".intro-actions a").last().click();
+    await page.waitForURL("**/en/contact/");
+    if(!await page.locator("[data-language-toggle]").isVisible())await page.locator("[data-preferences-trigger]").click();
+    await page.locator("[data-language-toggle]").click();
+    await page.locator('[data-language-dropdown] [data-locale="id"]').click();
+   await page.waitForURL("**/id/contact/");
+  await page.waitForLoadState("networkidle");
+   check("locale/current-contact-route-preserved",new URL(page.url()).pathname==="/id/contact/",page.url());
+  await page.emulateMedia({reducedMotion:"no-preference"});
+  await page.goto(`${origin}/en/`,{waitUntil:"networkidle"});
+  await page.locator(".portrait-stage").evaluate(el=>el.scrollIntoView({block:"center"}));
+  await page.waitForSelector(".skill-showcase[data-enhanced]");
+  await page.mouse.move(0,0);
+  await page.clock.install();
+  await page.clock.runFor(8000);
+  await page.locator(".skill-loop-group").first().locator("button").first().focus();
+  await settle();
+  const focused=await page.evaluate(()=>{
+    const box=document.activeElement.getBoundingClientRect(),viewport=document.querySelector(".skill-loop").getBoundingClientRect();
+    return {left:box.left,right:box.right,viewportLeft:viewport.left,viewportRight:viewport.right};
+  });
+  check("loop/first-shifted-item-visible",focused.left>=focused.viewportLeft&&focused.right<=focused.viewportRight,focused);
+  await page.clock.resume();
+  return {results,errors,passed:results.every(result=>result.passed)&&!errors.length};
+}

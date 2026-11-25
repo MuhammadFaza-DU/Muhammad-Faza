@@ -1,0 +1,15 @@
+.lanyard { width: 100%; height: 100%; position: absolute; inset: 0; }
+.lanyard-canvas { display: block; width: 100%; height: 100%; opacity: 0; }
+.lanyard[data-ready="true"] .lanyard-canvas { opacity: 1; }
+.lanyard-portrait { position: relative; width: 100%; }
+.lanyard-stage { position: relative; width: 100%; height: clamp(24rem, 44vw, 36rem); overflow: hidden; }
+.lanyard-fallback { position: absolute; width: 58%; left: 21%; top: 19%; aspect-ratio: 1.6 / 2.25; }
+.lanyard-fallback img { width: 100%; height: 100%; object-fit: cover; border-radius: 14px; display: block; }
+.lanyard-fallback[data-symbol] { background: #101010; border-radius: 14px; }
+.lanyard-fallback[data-symbol] img { object-fit: contain; padding: 20%; }
+.lanyard-fallback::before { content: ""; position: absolute; width: 12px; height: 30%; bottom: 100%; left: calc(50% - 6px); background: #101010; }
+.lanyard-portrait[data-ready="true"] .lanyard-fallback { visibility: hidden; }
+.lanyard-flip { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; background: transparent; color: var(--text); border: 0; padding: 0; }
+.lanyard-portrait[data-ready="true"] .lanyard-flip { pointer-events: none; }
+.lanyard-flip:focus-visible { outline: 2px solid var(--focus); outline-offset: -6px; border-radius: 16px; }
+@media (min-width: 56rem) { .lanyard-stage { height: clamp(30rem, 40vw, 38rem); } }

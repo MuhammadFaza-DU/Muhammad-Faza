@@ -1,0 +1,12 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import { copy, locales } from "../../i18n";
+import type { Locale } from "../../data/types";
+import HomePage from "../../components/home/HomePage.astro";
+export function getStaticPaths() { return locales.map(locale => ({ params: { locale } })); }
+const locale = Astro.params.locale as Locale;
+const t = copy[locale];
+---
+<SiteLayout locale={locale} title={`${t.intro.name} · ${t.intro.role}`} description={t.intro.paragraphs[0]} page="home">
+  <HomePage locale={locale} />
+</SiteLayout>

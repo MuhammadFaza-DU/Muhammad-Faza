@@ -1,0 +1,25 @@
+---
+import type { Locale } from "../../data/types";
+import { copy } from "../../i18n";
+import LanyardPortrait from "./LanyardPortrait";
+import HeroDotGrid from "./HeroDotGrid";
+import "../reference/DotGrid.css";
+const { locale } = Astro.props as { locale: Locale };
+const t = copy[locale];
+---
+<section id="intro" class="intro container" aria-labelledby="intro-title">
+  <HeroDotGrid client:visible />
+  <div class="intro-portrait"><LanyardPortrait front="/media/lanyard/front.webp" back="/media/lanyard/back.webp"
+    strap="/media/lanyard/strap.webp" alt="Muhammad Faza" flipLabel={t.lanyard.flip} instruction={t.lanyard.instruction} client:load /></div>
+  <div class="intro-copy" data-motion-scroll>
+    <p class="intro-greeting" data-motion-enter="0">{t.intro.greeting}</p>
+    <h1 id="intro-title" data-motion-enter="1">{t.intro.name}.</h1>
+    <p class="intro-role" data-motion-enter="2">{t.intro.role}</p>
+    <div class="intro-description" data-motion-enter="3">{t.intro.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+    <p class="intro-motto" data-motion-enter="4">“{t.intro.motto}”</p>
+    <div class="intro-actions" data-motion-enter="5">
+      <a class="button" href={`/${locale}/project/`}>{t.actions.work}</a>
+      <a class="button button-secondary" href={`/${locale}/contact/`}>{t.actions.contact}</a>
+    </div>
+  </div>
+</section>

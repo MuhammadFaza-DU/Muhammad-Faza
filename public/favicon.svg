@@ -1,13 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-  <rect width="32" height="32" rx="5" fill="#05070b"/>
-  <rect x="0.5" y="0.5" width="31" height="31" rx="4.5" fill="none" stroke="#ffffff" stroke-opacity="0.22"/>
-  <text
-    x="16" y="23"
-    font-family="Georgia, 'Times New Roman', serif"
-    font-size="21"
-    font-weight="700"
-    fill="#ffffff"
-    text-anchor="middle"
-    letter-spacing="-0.5"
-  >M</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="360 -100 1120 1120" fill="#101010"><style>@media(prefers-color-scheme:dark){path{fill:#F5F5F5}}</style><path d="M460 167 541 241 758 459 1043 171 1377 171 1284 280 1064 280 1037 309 755 596 714 557 567 407 567 644 460 748Z"/><path d="M1054 326 1056 326 1056 415 1290 416 1203 517 1056 518 1056 620 1056 644 947 748 947 432Z"/></svg>

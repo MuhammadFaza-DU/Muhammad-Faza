@@ -1,0 +1,54 @@
+/* Animate safe children, never ancestors of sticky cards or fixed dialogs. */
+[data-motion-enter] { animation: none; }
+html[data-motion-enabled] [data-motion-enter]:not([data-motion-settled]),
+html[data-motion-enabled] [data-motion-layer]:not([data-motion-settled]) { opacity: 0; }
+html[data-motion-enabled] [data-reveal-state="waiting"] { opacity: 0; }
+html[data-motion-enabled] [data-reveal-state="waiting"]:focus-within { opacity: 1; }
+html[data-motion-enabled] [data-catalog-card]:not([data-catalog-revealed]) { opacity: 0; }
+html[data-motion-enabled] [data-catalog-card]:focus-within { opacity: 1; }
+[data-motion-enter="1"] { --motion-order: 1; }
+[data-motion-enter="2"] { --motion-order: 2; }
+[data-motion-enter="3"] { --motion-order: 3; }
+[data-motion-enter="4"] { --motion-order: 4; }
+[data-motion-enter="5"] { --motion-order: 5; }
+[data-motion-enter="6"] { --motion-order: 6; }
+[data-motion-enter]:has(a[href],button,input,select) { animation-name: motion-fade; }
+[data-motion-enter]:focus-within { animation: none; }
+[data-motion-enter][data-motion-settled] { animation: none; }
+@keyframes motion-entrance {
+  from { opacity: 0; transform: translateY(28px) scale(.98); filter: blur(10px); }
+  45% { opacity: .6; transform: translateY(10px) scale(.99); filter: blur(4px); }
+  to { opacity: 1; transform: none; filter: none; }
+}
+@keyframes motion-fade {
+  from { opacity: .08; }
+  to { opacity: 1; }
+}
+.action-sheen {
+  position: fixed; top: 0; left: 0; width: 0; height: 0; pointer-events: none;
+  background: radial-gradient(110px circle at var(--light-x,50%) var(--light-y,50%),rgb(255 255 255 / .3),transparent 75%);
+  opacity: 0; transition: opacity 200ms ease; z-index: 103;
+}
+.action-sheen:not([data-inverse="true"]),
+[data-theme="dark"] .action-sheen[data-inverse="true"] {
+  background: radial-gradient(110px circle at var(--light-x,50%) var(--light-y,50%),rgb(0 0 0 / .18),transparent 75%);
+}
+[data-theme="dark"] .action-sheen:not([data-inverse="true"]) {
+  background: radial-gradient(110px circle at var(--light-x,50%) var(--light-y,50%),rgb(255 255 255 / .22),transparent 75%);
+}
+.button, .text-link, .footer-socials a, .preferences-trigger, .theme-toggle,
+.language-dropdown summary, .skill-item {
+  transition: filter 140ms ease, opacity 140ms ease, background-color 160ms ease;
+}
+.button:active, .preferences-trigger:active, .theme-toggle:active,
+.language-dropdown summary:active, .text-button:active, .explanation-close:active,
+.footer-socials a:active, .social-channel:active, .text-link:active { filter: brightness(.85); }
+.theme-switch-thumb { transition: transform 240ms var(--ease-out); }
+.language-options { animation: motion-fade 180ms ease; }
+@media (hover: hover) and (pointer: fine) {
+  .button:hover { filter: brightness(.88); }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-motion-enter] { animation-name: motion-fade; animation-duration: 420ms; animation-delay: calc(var(--motion-order,0) * 40ms); }
+  .theme-switch-thumb { transition: opacity 160ms ease; }
+}

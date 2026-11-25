@@ -1,0 +1,11 @@
+---
+import type { Locale } from "../../data/types";
+const { locale } = Astro.props as { locale: Locale };
+---
+<a class="brand" href={`/${locale}/`} aria-label="Muhammad Faza, Home">
+  <span class="brand-mark" aria-hidden="true">
+    <img class="brand-light" src="/media/brand/mf-black.svg" width="44" height="44" alt="" />
+    <img class="brand-dark" src="/media/brand/mf-white.svg" width="44" height="44" alt="" />
+  </span>
+  <span>Muhammad Faza</span>
+</a>

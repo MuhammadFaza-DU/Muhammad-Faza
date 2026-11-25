@@ -1,0 +1,22 @@
+---
+import type {Locale} from "../../data/types";
+import {copy} from "../../i18n";
+import ProfileCard from "./ProfileCard";
+const {locale}=Astro.props as {locale:Locale};
+const t=copy[locale];
+---
+<section id="hire" class="hiring container" aria-labelledby="hire-title">
+  <div class="hiring-copy" data-motion-scroll>
+    <h2 id="hire-title">{t.hiring.title}</h2>
+    <p>{t.hiring.introduction}</p>
+    <p class="muted">{t.hiring.opportunities}</p>
+    <ul class="hiring-roles" aria-label={t.hiring.rolesLabel}>
+      {t.hiring.roles.map(role=><li>{role}</li>)}
+    </ul>
+    <div class="hiring-actions">
+      <a class="button" href="/assets/documents/Resume.pdf" target="_blank" rel="noreferrer">{t.actions.resume}</a>
+      <a class="button button-secondary hiring-projects" href={`/${locale}/project/`}>{t.hiring.projectsAction}</a>
+    </div>
+  </div>
+  <div class="hiring-portrait"><ProfileCard contactText={t.actions.contact} contactHref={`/${locale}/contact/`} client:visible /></div>
+</section>

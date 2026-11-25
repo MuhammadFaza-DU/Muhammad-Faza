@@ -1,0 +1,7 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { en } from "../i18n/en";
+---
+<SiteLayout locale="en" title="Page not found · Muhammad Faza" description={en.common.notFoundBody} page="home">
+  <section class="container"><h1>{en.common.notFound}</h1><p>{en.common.notFoundBody}</p><a class="text-link" href="/en/">Home</a><a class="text-link" href="/id/">Bahasa Indonesia</a></section>
+</SiteLayout>

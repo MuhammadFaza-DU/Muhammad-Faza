@@ -1,0 +1,19 @@
+---
+import type { Locale } from "../../data/types";
+import { copy } from "../../i18n";
+import { contactChannels } from "../../data/contact";
+const { locale } = Astro.props as { locale: Locale };
+const t = copy[locale];
+---
+<footer class="site-footer container">
+  <nav class="footer-socials" aria-label={t.contact.profiles}>
+    {["instagram","email","github","linkedin","youtube","tiktok"].map(id => {
+      const channel=contactChannels.find(item=>item.id===id)!;
+      return <a href={channel.url} aria-label={channel.label}
+        target={id==="email"?undefined:"_blank"} rel={id==="email"?undefined:"noreferrer"}>
+        <img src={channel.icon} alt="" width="20" height="20" loading="lazy" />
+      </a>;
+    })}
+  </nav>
+  <small>© {new Date().getFullYear()} Muhammad Faza</small>
+</footer>

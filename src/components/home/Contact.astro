@@ -1,0 +1,20 @@
+---
+import type { Locale } from "../../data/types";
+import { copy } from "../../i18n";
+const {locale} = Astro.props as {locale: Locale};
+const t = copy[locale];
+---
+<section id="contact" class="container contact-section" aria-labelledby="contact-title">
+  <h2 id="contact-title">{t.contact.title}</h2>
+  <p>{t.contact.lead}</p>
+  <a class="contact-email" href="mailto:lexfaza@gmail.com">lexfaza@gmail.com</a>
+  <div class="contact-actions">
+    <a class="button" href="mailto:lexfaza@gmail.com">{t.contact.send}</a>
+    <button type="button" class="button button-secondary" data-copy-email
+      data-copied={t.contact.copied} data-failed={t.contact.copyFailed} hidden>{t.contact.copy}</button>
+    <a class="text-link" href="https://www.instagram.com/mfaz.aa/" target="_blank" rel="noreferrer">Instagram @mfaz.aa</a>
+    <a class="text-link" href="/assets/documents/Resume.pdf" target="_blank" rel="noreferrer">{t.actions.resume}</a>
+  </div>
+  <p class="copy-status" role="status" data-copy-status></p>
+</section>
+<script>import "../../client/contact";</script>

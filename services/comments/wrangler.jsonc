@@ -1,0 +1,20 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  "name": "faza-portfolio-comments-v2",
+  "main": "src/index.ts",
+  "account_id": "45d59e780b7aa28dbc45f6c7246d8e95",
+  "compatibility_date": "2026-10-30",
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": { "enabled": false },
+  "vars": {
+    "ALLOWED_ORIGINS": "http://127.0.0.1:4321,http://localhost:4321,https://mfazaa.my.id,https://mfazaa-portfolio.pages.dev",
+    "ALLOWED_HOSTNAMES": "127.0.0.1,localhost,mfazaa.my.id,mfazaa-portfolio.pages.dev"
+  },
+  "d1_databases": [{
+    "binding": "DB",
+    "database_name": "faza-portfolio-comments-v2",
+    "database_id": "34c77a48-2044-461f-9b7d-d76cc025ae70",
+    "migrations_dir": "migrations"
+  }]
+}

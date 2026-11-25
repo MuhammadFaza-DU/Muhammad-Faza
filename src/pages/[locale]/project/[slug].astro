@@ -1,0 +1,13 @@
+---
+import SiteLayout from "../../../layouts/SiteLayout.astro";
+import ProjectDetail from "../../../components/project/ProjectDetail.astro";
+import { projects } from "../../../data/projects";
+import { locales } from "../../../i18n";
+import type { Locale, ProjectRecord } from "../../../data/types";
+export function getStaticPaths() {
+  return locales.flatMap(locale => projects.map(project => ({ params: { locale, slug: project.slug }, props: { project } })));
+}
+const locale = Astro.params.locale as Locale;
+const { project } = Astro.props as { project: ProjectRecord };
+---
+<SiteLayout locale={locale} title={`${project.content[locale].title} · Muhammad Faza`} description={project.content[locale].summary} page="detail" slug={project.slug}><ProjectDetail locale={locale} project={project} /></SiteLayout>

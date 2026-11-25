@@ -1,0 +1,9 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import { en } from "../i18n/en";
+import HomePage from "../components/home/HomePage.astro";
+---
+<SiteLayout locale="en" title={`${en.intro.name} · ${en.intro.role}`} description={en.intro.paragraphs[0]} page="home">
+  <div data-entry-target="home"><HomePage locale="en" /></div>
+  <script>import "../client/entry";</script>
+</SiteLayout>

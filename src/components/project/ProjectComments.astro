@@ -1,0 +1,77 @@
+---
+import type {Locale} from "../../data/types";
+import "../../styles/project-comments.css";
+const {locale,slug}=Astro.props as {locale:Locale;slug:string};
+const text={
+  id:{
+    title:"Komentar project",
+    name:"Nama",namePlaceholder:"Nama yang ingin ditampilkan",message:"Komentar",
+    messagePlaceholder:"Apa pendapat Anda tentang project ini?",submit:"Kirim komentar",
+    empty:"Belum ada komentar.",
+    scrollHelp:"Daftar komentar dapat digulir. Gunakan tombol panah saat daftar mendapat fokus untuk membaca komentar lainnya.",
+    nojs:"Aktifkan JavaScript untuk membaca dan mengirim komentar.",
+    loading:"Memuat komentar…",retry:"Coba muat lagi",
+    more:"Muat komentar lainnya",sending:"Mengirim komentar…",success:"Komentar tersimpan dan dipublikasikan.",
+    gap:"Riwayat komentar belum dimuat.",
+    challenge:"Selesaikan pemeriksaan antispam dahulu. Jika belum muncul, coba lagi.",
+    challengeError:"Pemeriksaan antispam belum tersedia. Fokuskan formulir untuk mencoba lagi.",
+    unconfirmed:"Hasil kiriman belum dapat dipastikan. Periksa daftar atau coba kirim lagi tanpa mengubah isi untuk menghindari duplikasi.",
+    failure:"Komentar belum terkirim. Isinya tetap ada, silakan coba lagi.",
+    rate:"Terlalu banyak kiriman. Tunggu 10 menit sebelum mencoba lagi.",
+    deleted:"Kiriman ini sudah dihapus. Ubah isi jika ingin mengirim komentar baru.",
+    nameError:"Isi nama dengan 1 sampai 60 karakter.",
+    messageError:"Isi komentar dengan 1 sampai 1.600 karakter.",
+  },
+  en:{
+    title:"Project comments",
+    name:"Name",namePlaceholder:"Name you want to display",message:"Comment",
+    messagePlaceholder:"What do you think of this project?",submit:"Send comment",
+    empty:"No comments yet.",
+    scrollHelp:"This comment list scrolls. Use the arrow keys while the list is focused to read more comments.",
+    nojs:"Enable JavaScript to read and send comments.",
+    loading:"Loading comments…",retry:"Try loading again",
+    more:"Load more comments",sending:"Sending comment…",success:"Your comment is saved and published.",
+    gap:"Unloaded comment history.",
+    challenge:"Complete the antispam check first. If it has not appeared, try again.",
+    challengeError:"The antispam check is unavailable. Focus the form to try again.",
+    unconfirmed:"The result could not be confirmed. Check the list or retry without changing your draft to avoid duplicates.",
+    failure:"Your comment could not be sent. Your draft is still here; please try again.",
+    rate:"Too many submissions. Wait 10 minutes before trying again.",
+    deleted:"This submission has been deleted. Change the text if you want to submit a new comment.",
+    nameError:"Enter a name between 1 and 60 characters.",
+    messageError:"Enter a comment between 1 and 1,600 characters.",
+  },
+}[locale];
+---
+<section class="project-comments" data-project-comments data-project={slug}
+  data-comments-api={(import.meta.env.PUBLIC_PROJECT_COMMENTS_API_URL??"").replace(/\/$/,"")}
+  data-comments-sitekey={import.meta.env.PUBLIC_TURNSTILE_SITE_KEY??""}
+  aria-labelledby="project-comments-title" data-copy={JSON.stringify(text)}>
+  <h2 id="project-comments-title">{text.title}</h2>
+  <form class="project-comments-form">
+    <div class="project-comments-field">
+      <label for="project-comment-name">{text.name}</label>
+      <input id="project-comment-name" name="displayName" type="text" maxlength="60"
+        autocomplete="nickname" placeholder={text.namePlaceholder} required />
+    </div>
+    <div class="project-comments-field">
+      <label for="project-comment-message">{text.message}</label>
+      <textarea id="project-comment-message" name="comment" maxlength="1600" rows="3"
+        placeholder={text.messagePlaceholder} required></textarea>
+    </div>
+    <div class="project-comments-challenge" data-comments-challenge></div>
+    <button class="button project-comments-submit" type="submit" disabled>{text.submit}</button>
+    <p class="project-comments-status" data-comments-status role="status" aria-live="polite" aria-atomic="true"></p>
+    <noscript><p class="project-comments-nojs">{text.nojs}</p></noscript>
+  </form>
+  <p class="project-comments-status" data-comments-feed-status role="status" aria-live="polite"></p>
+  <div class="project-comments-empty" data-comments-empty hidden>
+    <p>{text.empty}</p>
+  </div>
+  <ol class="project-comments-list" data-comments-list tabindex="0"
+    aria-labelledby="project-comments-title" aria-description={text.scrollHelp} hidden></ol>
+  <button class="project-comments-more" data-comments-more type="button" hidden>{text.more}</button>
+</section>
+<script>
+  import "../../client/project-comments";
+</script>

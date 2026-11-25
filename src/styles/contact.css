@@ -1,0 +1,25 @@
+.contact-page { padding-block: 2rem 4rem; }
+.contact-opening { display: grid; gap: 1.25rem; max-width: 54rem; margin-bottom: 3rem; }
+.contact-opening h1 { font-size: clamp(2.4rem,1.25rem + 3.6vw,3.5rem); }
+.contact-opening p { color: var(--text-secondary); font-size: 1.125rem; text-align: justify; text-align-last: start; }
+.contact-layout { display: grid; gap: 3rem; }
+.contact-layout h2 { font-size: clamp(1.6rem, 1.3rem + .75vw, 2rem); }
+.social-profiles > p { margin-top: .875rem; max-width: 52ch; text-align: justify; text-align-last: start; }
+.social-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: .75rem; margin-top: 1.5rem; }
+.social-channel { display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; min-width: 0; padding: 1.25rem; background: var(--surface); border-radius: 14px; text-decoration: none; }
+.social-channel img { margin-bottom: .75rem; }
+:root:not([data-theme="dark"]) .social-channel[href*="github.com"] img { filter: brightness(0); }
+.social-name { font-size: .9375rem; font-weight: 600; }
+.social-handle { color: var(--text-secondary); font-size: .8125rem; overflow-wrap: anywhere; }
+.social-channel:active { background: var(--surface-raised); }
+.contact-direct { align-self: start; background: var(--surface); border-radius: 16px; padding: 1.5rem; }
+.contact-direct > p { margin-top: .875rem; }
+.contact-address { display: inline-block; font-size: clamp(1.25rem,.9rem + 1vw,1.75rem); line-height: 1.3; margin-top: 1.5rem; overflow-wrap: anywhere; text-underline-offset: .2em; }
+.contact-direct .contact-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1.5rem; }
+.contact-direct .copy-status { min-height: 1.6em; font-size: .875rem; }
+.contact-direct [hidden] { display: none; }
+@media (hover: hover) { .social-channel:hover { background: var(--surface-raised); } .social-channel:hover .social-name { text-decoration: underline; text-underline-offset: .2em; } }
+@media (min-width: 48rem) { .social-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+@media (min-width: 64rem) { .contact-layout { grid-template-columns: minmax(0,.9fr) minmax(0,1.1fr); gap: 3rem; } .social-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } .contact-opening { margin-bottom: 4rem; } .contact-direct { padding: 2rem; } }
+@media (min-width: 64rem) { .contact-opening .contact-sentence { display: block; } }
+@media (max-width: 22rem) { .social-grid { grid-template-columns: minmax(0,1fr); } }
